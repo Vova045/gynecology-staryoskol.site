@@ -17,5 +17,7 @@ from django.urls import path
 from gynecology_app import views
 
 urlpatterns = [
-    path('', views.index, name='index')
+    path('', views.home, name='home')
 ]
+
+

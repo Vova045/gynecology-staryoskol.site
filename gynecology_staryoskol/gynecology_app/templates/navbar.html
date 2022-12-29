@@ -1,0 +1,73 @@
+{% load static %}
+
+{% block custom_css %}
+<link rel="stylesheet" href="{% static '/css/navbar.css' %}">
+{% endblock custom_css %}
+
+{% block content %}
+<div class="navbar">
+    <div>
+        <div class="navbar_text hospital_text">
+            <p style="font-weight: 200;">Старооскольcкая окружная больница</p>
+            <p style="font-weight: 500;">Светителя Луки Крымского</p>
+        </div>
+    </div>
+
+    <div class="navbar_with_svg">
+        <img class="img_nav" src="{% static 'png/phone.png' %}">
+        <div class="navbar_text">
+            <p style="font-weight: 200; cursor: pointer;">+ 7 (4725) 12-34-56</p>
+            <p style="cursor: pointer;">+ 7 (901) 234-56-78</p>
+        </div>
+    </div>
+
+    <div class="navbar_with_svg">
+        <img class="img_nav" src="{% static 'png/clock.png' %}">
+        <div class="navbar_text">
+            <p style="font-weight: 200;">время работы</p>
+            <p style="font-weight: 500;">круглосуточно</p>
+        </div>
+    </div>
+
+    <div class="navbar_with_svg">
+        <img class="img_nav" src="{% static 'png/geo.png' %}">
+        <div class="navbar_text">
+            <p style="font-weight: 200;">г. Старый Оскол</p>
+            <p style="font-weight: 500;">ул. Ублинские горы, д. 1а</p>
+        </div>
+    </div>
+</div>
+<div class="navbar_otd">
+    <div class="navbar_with_svg">
+        <img class="img_nav" src="{% static 'png/logo.png' %}">
+        <div class="navbar_text">
+            <p class="logo_text_small" style="font-weight: 300;">Отделение</p>
+            <p class="logo_text_big" style="font-weight: 600;">Гинекологии</p>
+        </div>
+    </div>
+    <div class="navbar_button white_button">
+        <a>Диагностика</a>
+    </div>
+    <div class="navbar_button white_button">
+        <a>Пациентам</a>
+    </div>
+    <div class="navbar_button white_button">
+        <a>Об отделении</a>
+    </div>
+    <div class="navbar_button white_button">
+        <a>О больнице</a>
+    </div>
+    <div class="navbar_button white_button">
+        <a>Контакты</a>
+    </div>
+    <div class="navbar_button white_button">
+        <a>Услуги</a>
+    </div>
+    <div class="navbar_button white_button">
+        <a>Врачи</a>
+    </div>
+    <div class="navbar_button pink_button">
+        <a>Записаться к врачу</a>
+    </div>
+</div>
+{% endblock %}

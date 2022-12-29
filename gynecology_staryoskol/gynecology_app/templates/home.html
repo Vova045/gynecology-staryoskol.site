@@ -1,0 +1,471 @@
+{% extends 'main_template.html' %}
+{% load static %}
+
+{% block custom_css %}
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/main.css' %}">
+
+{% endblock custom_css %}
+
+{% block content %}
+<div class="wrapper">
+    <div class="top_content_div">
+        <img class="top_img_content" src="{% static 'png/top_content2.png' %}">
+    </div>
+    <div class="row top_content">
+        <p style="color:#2D3F50; margin: 0; line-height: normal;">Полноценное</p>
+        <p style="color:#00CCFF;">лечение</p>
+        <p class="regular">продолжайте свое лечение <br>
+            в нашей областной клиники <br>
+            <b>до полного восстановления</b></p>
+        <a class="big_pink_button"><b>ЗАПИСАТЬСЯ</b><br>НА ПРИЁМ</a>
+    </div>
+    <div class="column icon_content">
+        <div class="icon_card">
+            <img class="img_nav" src="{% static 'svg/01 icon.svg' %}">
+            <p class="icon_text">БЕСПЛАТНО<br>ПО ОМС</p>
+        </div>
+        <div class="icon_card">
+            <img class="img_nav" src="{% static 'svg/02 icon.svg' %}">
+            <p class="icon_text">ДЛЯ ИНОГОРОДНИХ<br>ГРАЖДАН</p>
+        </div>
+        <div class="icon_card">
+            <img class="img_nav" src="{% static 'svg/03 icon.svg' %}">
+            <p class="icon_text">ОНЛАЙН<br>КОНСУЛЬТАЦИЯ</p>
+        </div>
+        <div class="icon_card">
+            <img class="img_nav" src="{% static 'svg/04 icon.svg' %}">
+            <p class="icon_text">РАБОТАЕМ<br>КРУГЛОСУТОЧНО</p>
+        </div>
+        <div class="blue_blur_div">
+            <img class="blue_blur" src="{% static 'png/blue_blur.png' %}">
+        </div>
+    </div>
+    <div class="hello_content">
+        <div class="img_hello">
+            <div class="img_hello_content">
+                <img class="img_nav" src="{% static 'png/hello.png' %}">
+                <div class="row must_bring">
+                    <div class="img_hello_text">
+                        <p class="text22px">Помните,</p>
+                        <p class="text13px">для посещения врача<br>
+                            необходим <b>полис ОМС,</b><br>
+                            <b>паспорт РФ</b> и <b>СНИЛС</b></p>
+                    </div>
+                    <img class="img_nav img_hello_img" src="{% static 'png/doc_hello.png' %}">
+                </div>
+            </div>
+        </div>
+        <div class="text_hello">
+            <p class="text_hello_main" style="color: #00CCFF;">Добро пожаловать в</p>
+            <p class="text_hello_main" style="color: #2D3F50;">отделение Гинекологии</p>
+            <p class="text_hello_second">В Старом Осколе находится одно из самых <br>
+                крупных отделений гинекологии,<br>
+                которое занимается лечением заболеваний<br>
+                органов малого таза у женщин.<br>
+                <br>
+                Здесь работают высококвалифицированные<br>
+                врачи, которые прошли специальное<br>
+                обучение и имеют многолетний <br>
+                практический опыт.</p>
+            <div class="pink_border_button">
+                <a>Подробнее</a>
+            </div>
+        </div>
+    </div>
+    <div class="uslugi_content row">
+        <div class="img_uslugi_div">
+            <img class="img_uslugi" src="{% static 'svg/uslugi_fon.svg' %}">
+        </div>
+        <div class="uslugi_head_content">
+            <p>Наши услуги</p>
+            <div class="div_for_uslugi_content">
+                <div class="pink_border_button">
+                    <a>Диагностика</a>
+                </div>
+                <div class="pink_border_button">
+                    <a>Консультации</a>
+                </div>
+                <div class="pink_border_button">
+                    <a>Хирургическое лечение</a>
+                </div>
+                <div class="pink_border_button">
+                    <a>Сопровождение клиента</a>
+                </div>
+                <div class="pink_border_button">
+                    <a>Услуги стационара</a>
+                </div>
+                <div class="pink_border_button">
+                    <a>Экстренная хирургическая помощь</a>
+                </div>
+                <div class="pink_border_button">
+                    <a>Для иногородних пациентов</a>
+                </div>
+                <div class="pink_border_button">
+                    <a>Платные услуги</a>
+                </div>
+            </div>
+        </div>
+        <div class="pink_blur_div">
+            <img class="pink_blur" src="{% static 'png/pink_blur.png' %}" style="position: relative;">
+        </div>
+            
+        <div class="uslugi_text_content">
+            <div class="inner_uslugi_text_content">
+                <h1>Диагностика</h1>
+                <p>
+                    В гинекологии диагностика включает в себя ряд <br>
+                    методов, которые позволяют выявить причину <br>
+                    заболевания и назначить лечение. Диагностика <br>
+                    проводится при помощи следующих методов:<br>
+                    <br>
+                    <b>1. Лабораторная диагностика, включающая в<br>
+                    себя следующие методы:</b><br>
+                    - общий анализ крови;<br>
+                    - мазок на флору;<br>
+                    - анализ на вирусные инфекции;<br>
+                    <b>2. Инструментальная диагностика.</b><br>
+                    При этом используются такие методы как:<br>
+                    - ультразвуковое исследование<br>
+                    - гистероскопия<br>
+                    <b>3. Эндоскопическая диагностика</b><br>
+                    <b>4. Рентгенологическая диагностика</b><br>
+                    <div class="pink_border_button">
+                        <a>Подробнее</a>
+                    </div>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="doctors_content column">
+        <p>Наши Специалисты</p>
+        <div class="blue_blur_div">
+            <img class="blue_blur" src="{% static 'png/blue_blur.png' %}">
+        </div>
+        <div class="row">
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xs-6">
+                <article class="article article-style-b">
+                  <div class="article-header">
+                    <div class="article-image">
+                        <img src="{% static 'png/doc01.png' %}">
+                    </div>
+                  </div>
+                  <div class="article-details">
+                    <h1>Андреев Александр Юрьевич</h1>
+                    <p>Врач-терапевт</p>
+                  </div>
+                </article>
+            </div>
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+                <article class="article article-style-b">
+                  <div class="article-header">
+                    <div class="article-image">
+                        <img src="{% static 'png/doc02.png' %}">
+                    </div>
+                  </div>
+                  <div class="article-details">
+                    <h1>Васильева Мария Ивановна</h1>
+                    <p>Врач-терапевт</p>
+                  </div>
+                </article>
+            </div>
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+                <article class="article article-style-b">
+                  <div class="article-header">
+                    <div class="article-image">
+                        <img src="{% static 'png/doc03.png' %}">
+                    </div>
+                  </div>
+                  <div class="article-details">
+                    <h1>Иванов Олег Игоревич</h1>
+                    <p>Врач-рентгенолог</p>
+                  </div>
+                </article>
+            </div>
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+                <article class="article article-style-b">
+                  <div class="article-header">
+                    <div class="article-image">
+                        <img src="{% static 'png/doc04.png' %}">
+                    </div>
+                  </div>
+                  <div class="article-details">
+                    <h1>Белова Юлия Алексеевна</h1>
+                    <p>Врач-педиатр</p>
+                  </div>
+                </article>
+            </div>
+        </div>
+        <div class="pink_border_button">
+            <a>Посмотреть всех</a>
+        </div>
+    </div>
+    <div class="answers_background">
+        <div class="answers_content row">
+            <div class="answers_title">
+                <h1>Ответы на вопросы</h1>
+            </div>
+            <div class="answers_details row">
+    
+                <div class="answers_questions">
+                    <div class="question">
+                        <div class="question_for_answer">
+                            <h1>Можно ли самостоятельно принимать противозачаточные средства?</h1>
+                            <img class="plus" src="{% static 'svg/plus.svg' %}">
+                        </div>
+                        <div class="answer" style="display: none;">
+                            <p>В гинекологии диагностика включает в себя ряд методов, которые<br>
+                                позволяют выявить причину заболевания и назначить лечение.<br>
+                                Диагностика проводится при помощи<br>
+                                следующих методов.</p>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <div class="question_for_answer">
+                            <h1>Что значит, когда в цикле не было овуляции?</h1>
+                            <img class="plus" src="{% static 'svg/plus.svg' %}">
+                        </div>
+                        <div class="answer" style="display: none;">
+                            <p>В гинекологии диагностика включает в себя ряд методов, которые<br>
+                                позволяют выявить причину заболевания и назначить лечение.<br>
+                                Диагностика проводится при помощи<br>
+                                следующих методов.</p>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <div class="question_for_answer">
+                            <h1>Оптимальное время для посещения гинеколога?</h1>
+                            <img class="plus" src="{% static 'svg/plus.svg' %}">
+                        </div>
+                        <div class="answer" style="display: none;">
+                            <p>В гинекологии диагностика включает в себя ряд методов, которые<br>
+                                позволяют выявить причину заболевания и назначить лечение.<br>
+                                Диагностика проводится при помощи<br>
+                                следующих методов.</p>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <div class="question_for_answer">
+                            <h1>Что нужно взять с собой на прием?</h1>
+                            <img class="plus" style="display: none;" src="{% static 'svg/plus.svg' %}">
+                            <img class="minus" src="{% static 'svg/minus.svg' %}">
+                        </div>
+                        <div class="answer">
+                            <p>В гинекологии диагностика включает в себя ряд методов, которые<br>
+                                позволяют выявить причину заболевания и назначить лечение.<br>
+                                Диагностика проводится при помощи<br>
+                                следующих методов.</p>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <div class="question_for_answer">
+                            <h1>Сколько лет можно использовать внутриматочную спираль?</h1>
+                            <img class="plus" src="{% static 'svg/plus.svg' %}">
+                        </div>
+                        <div class="answer" style="display: none;">
+                            <p>В гинекологии диагностика включает в себя ряд методов, которые<br>
+                                позволяют выявить причину заболевания и назначить лечение.<br>
+                                Диагностика проводится при помощи<br>
+                                следующих методов.</p>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <div class="question_for_answer">
+                            <h1>С какого возраста женщина должна регулярно посещать гинеколога?</h1>
+                            <img class="plus" src="{% static 'svg/plus.svg' %}">
+                        </div>
+                        <div class="answer" style="display: none;">
+                            <p>В гинекологии диагностика включает в себя ряд методов, которые<br>
+                                позволяют выявить причину заболевания и назначить лечение.<br>
+                                Диагностика проводится при помощи<br>
+                                следующих методов.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="answers_add">
+                    <div class="one_answers_add">
+                        <p style="color: #FF6692;">Нет ответа на ваш вопрос?</p>
+                        <p style="color: white;">Задайте его и получите<br>
+                            ответ в ближайшее время</p>
+                        <div class="navbar_button pink_button" style="background-color: #FF6692;">
+                            <a>Задать вопрос</a>
+                        </div>
+                    </div>
+                    <div class="second_answers_add">
+                        <p style="color: white;">А также запишитесь <br>
+                            на прием и узнайте <br>
+                            всю информацию <br>
+                            о конкретно вашем <br>
+                            случае</p>
+                            <div class="navbar_button pink_button" style="background-color: #FF6692;">
+                                <a>Записаться на прием</a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ask_question_content">
+        <div class="ask_question row">
+            <h1>Задать вопрос</h1>
+            <div class="ask_question_form column">
+                <form  class="ask_question_form" id='ask_question_form_home' method="POST" action="#" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <div class="row window_ask"> 
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                                <input type="text" class="form-control" name="ask_first_name" placeholder="Имя"  required=True>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                                <input type="text" class="form-control" name="ask_mail" placeholder="E-mail" required=True pattern="[0-9.)(+-]{4,20}$">
+                            </div>
+                        </div>
+                        <div class="row window_ask"> 
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                                <input type="text" class="form-control" name="ask_second_name" placeholder="Фамилия"  required=True>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                                <input type="text" class="form-control" name="ask_telephone" placeholder="Телефон" required=True pattern="[0-9.)(+-]{4,20}$">
+                            </div>
+                        </div>
+                        <div class="row window_ask"> 
+                            <div class="col-lg-12">
+                                <textarea type="text" class="form-control" name="ask_message" placeholder="Сообщение" required=True></textarea>                          
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row window_ask"> 
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-check confidentional_check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <p>Нажимая на кнопку, вы даете согласие на обработку персональных 
+                                    данных и соглашаетесь с Политикой конфиденциальности</p>
+                            </div>                        </div>
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 window_ask_button">
+                            <div class="navbar_button pink_button" style="background-color: #FF6692;">
+                                <a>Задать вопрос</a>
+                            </div>                       
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="ask_image_div">
+            <img class="ask_image" src="{% static 'png/ask_image.png' %}">
+        </div>
+    </div>
+</div>
+
+<div class="ask_modal_content">
+    <div class="ask_modal_window">
+        <div class="ask_modal_close">
+            <img src="{% static 'svg/x.svg' %}">
+        </div>
+        <div class="ask_modal_text row">
+            <h1>Задать вопрос</h1>
+            <p>Специалист ответит на ваш вопрос в ближайшее время</p>
+        <div class="ask_modal_form column">
+            <form  class="ask_modal_form" id='ask_modal_form_home' method="POST" action="#" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <div class="row window_ask_modal"> 
+                        <div class="col-lg-6">
+                            <input type="text" class="form-control" name="ask_modal_firstname" placeholder="Имя"  required=True>
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="text" class="form-control" name="ask_modal_mail" placeholder="Email"  required=True>
+                        </div>
+                    </div>
+                    <div class="row window_ask_modal"> 
+                        <div class="col-lg-6">
+                            <input type="text" class="form-control" name="ask_modal_lastname" placeholder="Фамилия"  required=True>
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="text" class="form-control" name="ask_modal_phone" placeholder="Телефон"  required=True>
+                        </div>
+                    </div>
+                    <div class="row window_ask_modal"> 
+                        <div class="col-lg-12">
+                            <textarea type="text" class="form-control" name="ask_modal_message" placeholder="Сообщение" required=True></textarea>                          
+                        </div>
+                    </div>
+                </div>
+                <div class="row window_ask_modal"> 
+                    <div class="col-lg-12 window_ask_modal_button">
+                        <div class="navbar_button pink_button" style="background-color: #FF6692;">
+                            <a>Заказать звонок</a>
+                        </div>                       
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-check ask_modal_confidentional_check">
+                            <input class="form-check-input" type="checkbox" value="" id="ask_modal_confidentional_check">
+                            <p>Нажимая на кнопку, вы даете согласие на обработку персональных 
+                                данных и соглашаетесь с Политикой конфиденциальности</p>
+                        </div>                        
+                    </div>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="recall_content">
+    <div class="recall_window">
+        <div class="recall_close">
+            <img src="{% static 'svg/x.svg' %}">
+        </div>
+        <div class="recall_text row">
+            <h1>Укажите ваш контактный номер</h1>
+            <p>Специалист перезвонит Вам и уточнит возможность<br>
+                посетить отделение в ближайшее время</p>
+        <div class="recall_form column">
+            <form  class="recall_form" id='recall_form_home' method="POST" action="#" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <div class="row window_recall"> 
+                        <div class="col-lg-12">
+                            <input type="text" class="form-control" name="recall_phone" placeholder="Телефонный номер"  required=True>
+                        </div>
+                    </div>
+                    <div class="row window_recall"> 
+                        <div class="col-lg-12">
+                            <input type="text" class="form-control" name="recall_time" placeholder="Удобное время для звонка"  required=True>
+                        </div>
+                    </div>
+                </div>
+                    <div class="col-lg-12">
+                        <div class="form-check time_recall_check">
+                            <input class="form-check-input" type="checkbox" value="" id="time_recall_check">
+                            <p>Перезвонить в ближайшее время</p>
+                        </div>                        
+                    </div>
+                <div class="row window_recall"> 
+                    <div class="col-lg-12 window_recall_button">
+                        <div class="navbar_button pink_button" style="background-color: #FF6692;">
+                            <a>Заказать звонок</a>
+                        </div>                       
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-check recall_confidentional_check">
+                            <input class="form-check-input" type="checkbox" value="" id="recall_confidentional_check">
+                            <p>Нажимая на кнопку, вы даете согласие на обработку персональных 
+                                данных и соглашаетесь с Политикой конфиденциальности</p>
+                        </div>                        
+                    </div>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="data_sent_content">
+    <div class="data_sent_window">
+        <div class="data_sent_close">
+            <img src="{% static 'svg/x.svg' %}">
+        </div>
+        <div class="data_sent_text row">
+            <h1>Ваши данные отправлены</h1>
+            <p>Спасибо за уделенное время</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
