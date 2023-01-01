@@ -134,7 +134,7 @@ MEDIA_URL="/media/"
 MEDIA_ROOT=os.path.join(BASE_DIR,"media")
 
 STATIC_URL = '/static/'
-base_static = Path(__file__).resolve().parent.parent
+base_static = Path(__file__).resolve().parent.parent.parent
 if DEBUG:
     STATICFILES_DIRS = [
         os.path.join(base_static, 'static')

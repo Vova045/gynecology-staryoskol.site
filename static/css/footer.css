@@ -41,11 +41,96 @@
 }
 
 @media (min-width: 1px) and (max-width: 250px) {
+    .footer{
+        display: none;
+    }
 }
 @media (min-width: 251px) and (max-width: 319px) {
+    .footer {
+        width:251px; height: fit-content; padding-left: 1px; padding-right: 1px; padding-top: 10px; padding-bottom: 10px;
+        flex-wrap: nowrap;
+        background-color: #FF5C8B
+    }
+    .logo_footer {
+        width: fit-content; padding: 1px;
+    }
+    .logo_footer p{
+        font-size: 3px; font-weight: 200; color: white; margin-bottom: 7px;
+    }
+    .logo_footer h1{
+        font-size: 3px; font-size: 600; color: white;margin-bottom: 11px;
+    }
+    .chapters_footer {
+        width: fit-content; padding: 1px;
+    }
+    .chapters_footer p{
+        font-size: 3px; font-weight: 200; color: white; margin-bottom: 8px;
+    }
+    .chapters_footer h1{
+        font-size: 3px; font-size: 600; color: white;margin-bottom: 8px;
+    }
+    .information_footer {
+        width: fit-content; padding: 1px;
+    }
+    .information_footer p{
+        font-size: 3px; font-weight: 200; color: white;margin-bottom: 8px;
+    }
+    .information_footer h1{
+        font-size: 3px; font-size: 600; color: white;margin-bottom: 8px;
+    }
+    .contact_footer {
+        width: fit-content; padding: 1px;
+    }
+    .contact_footer p{
+        font-size: 3px; font-weight: 200; color: white;margin-bottom: 8px;
+    }
+    .contact_footer h1{
+        font-size: 3px; font-size: 600; color: white;margin-bottom: 8px;
+    }
 }
     
 @media (min-width: 320px) and (max-width: 540px) {
+    .footer {
+        width:100%; height: fit-content; padding-left: 3px; padding-right: 3px; padding-top: 16px; padding-bottom: 16px;
+        flex-wrap: nowrap; margin: auto; justify-content: space-around;
+        background-color: #FF5C8B
+    }
+    .logo_footer {
+        width: fit-content;
+    }
+    .logo_footer p{
+        font-size: 4px; font-weight: 200; color: white; margin-bottom: 7px;
+    }
+    .logo_footer h1{
+        font-size: 5px; font-size: 600; color: white;margin-bottom: 11px;
+    }
+    .chapters_footer {
+        width: fit-content;
+    }
+    .chapters_footer p{
+        font-size: 4px; font-weight: 200; color: white; margin-bottom: 8px;
+    }
+    .chapters_footer h1{
+        font-size: 5px; font-size: 600; color: white;margin-bottom: 8px;
+    }
+    .information_footer {
+        width: fit-content;
+    }
+    .information_footer p{
+        font-size: 4px; font-weight: 200; color: white;margin-bottom: 8px;
+    }
+    .information_footer h1{
+        font-size: 5px; font-size: 600; color: white;margin-bottom: 8px;
+    }
+    .contact_footer {
+        width: fit-content;
+    }
+    .contact_footer p{
+        font-size: 3px; font-weight: 200; color: white;margin-bottom: 8px;
+    }
+    .contact_footer h1{
+        font-size: 5px; font-size: 600; color: white;margin-bottom: 8px;
+    }
 }
 @media (min-width: 541px) and (max-width: 768px) {
     .footer {

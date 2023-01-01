@@ -73,11 +73,119 @@
 }
 
 @media (min-width: 1px) and (max-width: 250px) {
+    .navbar {
+        display: none;
+    }
+    .navbar_otd {
+        display: none;
+    }
 }
 @media (min-width: 251px) and (max-width: 319px) {
+    .navbar {
+        width: 100%; height: 25px; right: 0; left: 0; margin: auto; justify-content: space-around;
+        align-items: center; padding-left: 0; padding-right: 0; padding-top: 5px; padding-bottom: 5px;
+    }
+    .navbar p{
+        font-size: 4px;
+    }
+    .navbar_otd {
+        width: 100%; height: 20px; right: 0; left: 0; margin: auto;
+        z-index: 2; padding-left: 3px; padding-right:3px;
+        display: flex; flex-wrap: nowrap; flex-direction: row;
+        justify-content: space-around; 
+    }
+    .navbar_otd .navbar_with_svg {
+        padding-right: 50px;
+    }
+
+    .navbar_otd .navbar_button a{
+        font-size: 4px; padding: 1px;
+    }
+    .navbar_otd .pink_button a{
+        font-size: 4px; padding: 4px;
+    }
+    .pink_button {
+        margin-left: 4px;
+    }
+
+    .navbar_button a{
+        font-size: 4px; margin: 0;
+        text-decoration: none; white-space: wrap;
+        padding: 3px; padding-left: 3px; padding-right: 3px; font-weight: 400; 
+    }
+    .navbar_otd .navbar_with_svg {
+        padding-right: 2px;
+    }
+    .navbar_text .logo_text_small {
+        font-size: 7px; display: none;
+    }
+    .navbar_text .logo_text_big {
+        font-size: 7px; display: none;
+    }
+    .navbar_otd .img_nav {
+        margin-right: 5px;
+        width: 15px;
+        height: auto;
+    }
+    .navbar .img_nav {
+        margin-right: 3px;
+        width: 7px;
+        height: auto;
+    }
 }
     
 @media (min-width: 320px) and (max-width: 540px) {
+    .navbar {
+        width: 100%; height: 30px; right: 0; left: 0; margin: auto; justify-content: space-around;
+        align-items: center; padding-left: 0; padding-right: 0; padding-top: 5px; padding-bottom: 5px;
+    }
+    .navbar p{
+        font-size: 5px;
+    }
+    .navbar_otd {
+        width: 100%; height: 25px; right: 0; left: 0; margin: auto;
+        z-index: 2; padding-left: 3px; padding-right:3px;
+        display: flex; flex-wrap: nowrap; flex-direction: row;
+        justify-content: space-around; 
+    }
+    .navbar_otd .navbar_with_svg {
+        padding-right: 50px;
+    }
+
+    .navbar_otd .navbar_button a{
+        font-size: 5px; padding: 1px;
+    }
+    .navbar_otd .pink_button a{
+        font-size: 5px; padding: 4px;
+    }
+    .pink_button {
+        margin-left: 4px;
+    }
+
+    .navbar_button a{
+        font-size: 4px; margin: 0;
+        text-decoration: none; white-space: wrap;
+        padding: 3px; padding-left: 3px; padding-right: 3px; font-weight: 400; 
+    }
+    .navbar_otd .navbar_with_svg {
+        padding-right: 2px;
+    }
+    .navbar_text .logo_text_small {
+        font-size: 7px; display: none;
+    }
+    .navbar_text .logo_text_big {
+        font-size: 7px; display: none;
+    }
+    .navbar_otd .img_nav {
+        margin-right: 5px;
+        width: 15px;
+        height: auto;
+    }
+    .navbar .img_nav {
+        margin-right: 3px;
+        width: 7px;
+        height: auto;
+    }
 }
 @media (min-width: 541px) and (max-width: 768px) {
     .navbar {
