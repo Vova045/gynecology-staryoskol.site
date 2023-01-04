@@ -1,0 +1,29 @@
+{% extends 'main_template.html' %}
+{% load static %}
+
+{% block custom_css %}
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/main.css' %}">
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/page.css' %}">
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/modal.css' %}">
+
+{% endblock custom_css %}
+{% block title %}
+Пациентам
+{% endblock title %}
+{% block content %}
+<div class="wrapper">
+    <div class="have_question row">
+        <p>Если у вас остались вопросы,<br>
+            воспользуйтесь нашими услугами
+        </p>
+        <div class="banner_button_div row">
+            <div class="pink_noborder_button">
+                <a>Записаться на прием</a>
+            </div>
+            <div class="white_border_button">
+                <a>Задать вопрос</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

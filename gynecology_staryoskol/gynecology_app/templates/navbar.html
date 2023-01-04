@@ -7,17 +7,23 @@
 {% block content %}
 <div class="navbar">
     <div>
-        <div class="navbar_text hospital_text">
-            <p style="font-weight: 200;">Старооскольcкая окружная больница</p>
-            <p style="font-weight: 500;">Светителя Луки Крымского</p>
-        </div>
+        <a href="http://sob.belzdrav.ru">
+            <div class="navbar_text hospital_text">
+                <p style="font-weight: 200;">Старооскольcкая окружная больница</p>
+                <p style="font-weight: 500;">Светителя Луки Крымского</p>
+            </div>
+        </a>
     </div>
 
     <div class="navbar_with_svg">
         <img class="img_nav" src="{% static 'png/phone.png' %}">
         <div class="navbar_text">
-            <p style="font-weight: 200; cursor: pointer;">+ 7 (4725) 12-34-56</p>
-            <p style="cursor: pointer;">+ 7 (901) 234-56-78</p>
+            <a href="tel:+74725123456">
+                <p style="font-weight: 200; cursor: pointer;">+ 7 (4725) 12-34-56</p>
+            </a>
+            <a href="tel:+79012345678">
+                <p style="cursor: pointer;">+ 7 (901) 234-56-78</p>
+            </a>
         </div>
     </div>
 
@@ -39,34 +45,38 @@
 </div>
 <div class="navbar_otd">
     <div class="navbar_with_svg">
-        <img class="img_nav" src="{% static 'png/logo.png' %}">
-        <div class="navbar_text">
-            <p class="logo_text_small" style="font-weight: 300;">Отделение</p>
-            <p class="logo_text_big" style="font-weight: 600;">Гинекологии</p>
-        </div>
+        <a href="{% url 'home' %}">
+            <img class="img_nav" src="{% static 'png/logo.png' %}">
+        </a>
+        <a href="{% url 'home' %}">
+            <div class="navbar_text">
+                <p class="logo_text_small" style="font-weight: 300;">Отделение</p>
+                <p class="logo_text_big" style="font-weight: 600;">Гинекологии</p>
+            </div>
+        </a>
     </div>
     <div class="navbar_button white_button">
-        <a>Диагностика</a>
+        <a href="{% url 'diagnostics' %}">Диагностика</a>
     </div>
     <div class="navbar_button white_button">
-        <a>Пациентам</a>
+        <a href="{% url 'for_clients' %}">Пациентам</a>
     </div>
     <div class="navbar_button white_button">
-        <a>Об отделении</a>
+        <a href="{% url 'department' %}">Об отделении</a>
     </div>
     <div class="navbar_button white_button">
-        <a>О больнице</a>
+        <a href="{% url 'hospital' %}">О больнице</a>
     </div>
     <div class="navbar_button white_button">
-        <a>Контакты</a>
+        <a href="{% url 'contacts' %}">Контакты</a>
     </div>
     <div class="navbar_button white_button">
-        <a>Услуги</a>
+        <a href="{% url 'services' %}">Услуги</a>
     </div>
     <div class="navbar_button white_button">
-        <a>Врачи</a>
+        <a href="{% url 'doctors' %}">Врачи</a>
     </div>
-    <div class="navbar_button pink_button">
+    <div class="navbar_button pink_button recall_button">
         <a>Записаться к врачу</a>
     </div>
 </div>

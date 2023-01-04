@@ -10,33 +10,50 @@
 <div class="footer_fon">
     <div class="row footer">
         <div class="logo_footer">
-            <p>Отделение</p>
-            <h1>Гинекологии</h1>
-            <p>Старооскольской окружной больницы</p>
-            <h1>Святителя Луки Крымского</h1>
+            <a href="{% url 'home' %}">
+                <p>Отделение</p>
+                <h1>Гинекологии</h1>
+            </a>
+            <a href="http://sob.belzdrav.ru">
+                <p>Старооскольской окружной больницы</p>
+                <h1>Святителя Луки Крымского</h1>
+            </a>
         </div>
         <div class="chapters_footer">
             <h1>Разделы</h1>
-            <p>Диагностика</p>
-            <p>Услуги</p>
-            <p>Платные услуги</p>
+            <a href="{% url 'diagnostics' %}"><p>Диагностика</p></a>
+            <a href="{% url 'services' %}"><p>Услуги</p></a>
+            <a href="{% url 'paid_services' %}"><p>Платные услуги</p></a>
         </div>
         <div class="information_footer">
             <h1>Информация</h1>
-            <p>Пациентам</p>
-            <p>Об отделении</p>
-            <p>Наши врачи</p>
-            <p>О больнице</p>
-            <p>Вопросы и ответы</p>
-            <p>Политика конфиденциальности</p>
+            <a href="{% url 'for_clients' %}"><p>Пациентам</p></a>
+            <a href="{% url 'department' %}"><p>Об отделении</p></a>
+            <a href="{% url 'doctors' %}"><p>Наши врачи</p></a>
+            <a href="{% url 'hospital' %}"><p>О больнице</p></a>
+            <a href="{% url 'questions_and_answers' %}"><p>Вопросы и ответы</p></a>
+            <a href="{% url 'privacy_policy' %}"><p>Политика конфиденциальности</p></a>
         </div>
         <div class="contact_footer">
             <h1>Адрес</h1>
             <p>г. Старый Оскол, ул. Ублинские горы, 1а</p>
             <h1>E-Mail</h1>
-            <p>health@staryoskol.ru</p>
+            <a href="mailto:health@staryoskol.ru">
+                <p>health@staryoskol.ru</p>
+            </a>
             <h1>Телефон</h1>
-            <p>8 (901) 234-56-78, 8 (4725) 12-34-56</p>
+            <div class="footer_phone">
+                <a href="tel:+79012345678">
+                    <div style="width: fit-content; height: fit-content; cursor: pointer;">
+                        <p>8 (901) 234-56-78,&nbsp;</p>
+                    </div>
+                </a>
+                <a href="tel:+74725123456">
+                    <div style="width: fit-content; height: fit-content;cursor: pointer;">
+                        <p> 8 (4725) 12-34-56</p>
+                    </div>
+                </a>
+            </div>
             <h1>Время работы</h1>
             <p>круглосуточно</p>
         </div>

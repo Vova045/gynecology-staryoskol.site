@@ -1,0 +1,153 @@
+.recall_content {
+    width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); position: fixed; top: 0; left: 0;
+    display: none; justify-content: center; align-items: center; border-radius: 4px; z-index: 1000;
+}
+.recall_window {
+    width: 380px; height: 330px; position: relative; display: flex; flex-direction: row;  align-items: center; 
+    background-color: white;border-radius: 10px;
+}
+.recall_close {
+    position: absolute; top: 5px; right: 15px; cursor: pointer;
+}
+.recall_text {
+    display: flex; margin-bottom: 0px;
+}
+.recall_text h1{
+    font-size: 16px; font-weight: 500; text-align: center; padding: 5px;
+}
+.recall_text p{
+    font-size: 11px; font-weight: 200; text-align: center; margin: 0; padding: 5px;
+}
+.recall_form {
+    display: flex; flex-direction: column; padding: 0; width: 300px; align-items: center; margin: auto;
+}
+.recall_form .form-group{
+    width: inherit; padding-bottom: 10px;
+}
+.recall_form input[type="text"]{
+    border-radius: 5px; border: 1px solid; border-color: #F5609E; background-color: white; height: 30px;
+}
+.recall_form .window_recall{
+    padding: 5px; padding-left: 0; padding-right: 0;
+}
+.recall_form ::placeholder {
+    color: #2D3F50; font-size: 11px;
+  }
+
+.recall_confidentional_check p{
+    font-size: 7px; font-weight: 100; text-align: left; padding-left: 0; margin-left: -5px;
+}
+.recall_confidentional_check .form-check-input {
+    height: 14px; width: 14px; margin-top: 7px;
+    }
+.recall_confidentional_check .form-check-input:checked {
+    background-color: #2D3F50;
+    border-color: #2D3F50;
+    }
+.time_recall_check {
+    margin-bottom: 0; margin-top: 0;
+}
+.time_recall_check p{
+    font-size: 12px; font-weight: 100; text-align: left;
+}
+.time_recall_check .form-check-input {
+    height: 20px; width: 20px;
+    }
+.time_recall_check .form-check-input:checked {
+    background-color: #F45F97;
+    border-color: #F45F97;
+    }
+.window_recall_button {
+    display: flex; flex-direction: row; margin-top: 5px; margin-bottom: 5px; justify-content: left;
+}
+.recall_form .form-group {
+    padding-bottom: 5px;
+}
+.ask_modal_content {
+    width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); position: fixed; top: 0; left: 0;
+    display: none; justify-content: center; align-items: center; border-radius: 4px; z-index: 1000;
+}
+.ask_modal_window {
+    width: 620px; height: 360px; position: relative; display: flex; flex-direction: row;  align-items: center; 
+    background-color: white;border-radius: 10px;
+}
+.ask_modal_close {
+    position: absolute; top: 5px; right: 15px; cursor: pointer;
+}
+.ask_modal_text {
+    display: flex; margin-bottom: 0px;
+}
+.ask_modal_text h1{
+    font-size: 16px; font-weight: 500; text-align: center; padding: 5px;
+}
+.ask_modal_text p{
+    font-size: 11px; font-weight: 200; text-align: center; margin: 0; padding: 5px;
+}
+.ask_modal_form {
+    display: flex; flex-direction: column; padding: 0; width: 500px; align-items: center; margin: auto;
+}
+.ask_modal_form .form-group{
+    width: inherit; padding-bottom: 10px;
+}
+.ask_modal_form input[type="text"]{
+    border-radius: 5px; border: 1px solid; border-color: #F5609E; background-color: white; height: 30px;
+}
+.ask_modal_form textarea[type="text"]{
+    border-radius: 5px; height: 80px; border: 1px solid; border-color: #F5609E; background-color: white;
+}
+.ask_modal_form .window_ask_modal{
+    padding: 5px; padding-left: 0; padding-right: 0;
+}
+.ask_modal_form ::placeholder {
+    color: #2D3F50; font-size: 11px;
+  }
+
+.ask_modal_confidentional_check p{
+    font-size: 10px; font-weight: 100; text-align: left; padding-left: 0;
+}
+.ask_modal_confidentional_check .form-check-input {
+    height: 16px; width: 16px; margin-top: 7px;
+    }
+.ask_modal_confidentional_check .form-check-input:checked {
+    background-color: #2D3F50;
+    border-color: #2D3F50;
+    }
+.time_ask_modal_check {
+    margin-bottom: 0; margin-top: 0;
+}
+.time_ask_modal_check p{
+    font-size: 12px; font-weight: 100; text-align: left;
+}
+.time_ask_modal_check .form-check-input {
+    height: 20px; width: 20px;
+    }
+.time_ask_modal_check .form-check-input:checked {
+    background-color: #F45F97;
+    border-color: #F45F97;
+    }
+.window_ask_modal_button {
+    display: flex; flex-direction: row; margin-top: 5px; margin-bottom: 5px; justify-content: left;
+}
+.ask_modal_form .form-group {
+    padding-bottom: 5px;
+}
+.data_sent_content {
+    width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); position: fixed; top: 0; left: 0;
+    display: none; justify-content: center; align-items: center; border-radius: 4px; z-index: 1000;
+}
+.data_sent_window {
+    width: 380px; height: 230px; position: relative; display: flex; flex-direction: row;  align-items: center; 
+    background-color: white;border-radius: 10px; border: 2px solid; border-color: #F45F97;
+}
+.data_sent_close {
+    position: absolute; top: 5px; right: 15px; cursor: pointer;
+}
+.data_sent_text {
+    display: flex; margin-bottom: 0px;
+}
+.data_sent_text h1{
+    font-size: 16px; font-weight: 500; text-align: center; padding: 5px;
+}
+.data_sent_text p{
+    font-size: 11px; font-weight: 200; text-align: center; margin: 0; padding: 5px;
+}

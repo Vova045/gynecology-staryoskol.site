@@ -17,7 +17,17 @@ from django.urls import path
 from gynecology_app import views
 
 urlpatterns = [
-    path('', views.home, name='home')
+    path('', views.home, name='home'),
+    path('diagnostics', views.diagnostics, name='diagnostics'),
+    path('for_clients', views.for_clients, name='for_clients'),
+    path('department', views.department, name='department'),
+    path('hospital', views.hospital, name='hospital'),
+    path('contacts', views.contacts, name='contacts'),
+    path('services', views.services, name='services'),
+    path('doctors', views.doctors, name='doctors'),
+    path('questions_and_answers', views.questions_and_answers, name='questions_and_answers'),
+    path('privacy_policy', views.privacy_policy, name='privacy_policy'),
+    path('paid_services', views.paid_services, name='paid_services'),
 ]
 
 
