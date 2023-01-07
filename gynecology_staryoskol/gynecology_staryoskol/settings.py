@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%za2a9)f_0pw9g)$s)r#&7i1&)w9r=ah-(3=xeq@d-1kh#2$!#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['gynecology-staryoskol.site','www.gynecology-staryoskol.site', '127.0.0.1']
 
@@ -142,3 +142,11 @@ if DEBUG:
 else:
     STATIC_ROOT = os.path.join(base_static, 'static')
 BASE_URL="http://127.0.0.1:8000"
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mail.ru'
+EMAIL_PORT = 2525
+EMAIL_HOST_USER = 'vovatsar@bk.ru'
+EMAIL_HOST_PASSWORD = 't9e0gD28KZW8wC9XtgNm'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False

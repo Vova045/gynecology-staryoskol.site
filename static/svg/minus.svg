@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Creator: CorelDRAW -->
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="13px" height="2px" version="1.1" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
-viewBox="0 0 0.55 0.08"
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="13px" height="13px" version="1.1" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
+viewBox="0 0 0.1 0.1"
  xmlns:xlink="http://www.w3.org/1999/xlink"
  xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
  <g id="Layer_x0020_1">
   <metadata id="CorelCorpID_0Corel-Layer"/>
-  <path fill="#2D3F50" d="M0.04 0l0.47 0c0.03,0 0.04,0.02 0.04,0.04l0 0c0,0.02 -0.01,0.04 -0.04,0.04l-0.47 0c-0.02,0 -0.04,-0.02 -0.04,-0.04l0 0c0,-0.02 0.02,-0.04 0.04,-0.04z"/>
+  <rect fill="black" y="0.04" width="0.1" height="0.01" rx="0.01" ry="0.01"/>
+  <rect fill="none" transform="matrix(2.64845E-014 -1 1 2.64845E-014 0.0406611 0.0956055)" width="0.1" height="0.01" rx="0.01" ry="0.01"/>
  </g>
 </svg>

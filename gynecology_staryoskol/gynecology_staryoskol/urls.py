@@ -28,6 +28,12 @@ urlpatterns = [
     path('questions_and_answers', views.questions_and_answers, name='questions_and_answers'),
     path('privacy_policy', views.privacy_policy, name='privacy_policy'),
     path('paid_services', views.paid_services, name='paid_services'),
+    path('consultations', views.consultations, name='consultations'),
+    path('surgery', views.surgery, name='surgery'),
+    path('client_support', views.client_support, name='client_support'),
+    path('hospital_support', views.hospital_support, name='hospital_support'),
+    path('emergency_care', views.emergency_care, name='emergency_care'),
+    path('non-resident_clients', views.non_resident_clients, name='non-resident_clients'),
 ]
 
 

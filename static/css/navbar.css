@@ -359,9 +359,12 @@
         padding-right: 50px;
     }
     .navbar_button a{
-        padding: 4px; padding-left: 9px; padding-right: 9px; font-weight: 400;
+        padding: 4px; padding-left: 7px; padding-right: 7px; font-weight: 400;
     }
     .pink_button {
         margin-left: 5px;
+    }
+    .navbar_otd .navbar_with_svg {
+        padding-right: 50px;
     }
 }

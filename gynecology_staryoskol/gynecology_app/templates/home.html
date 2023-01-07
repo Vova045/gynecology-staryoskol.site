@@ -6,7 +6,9 @@
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/modal.css' %}">
 
 {% endblock custom_css %}
-
+{% block title %}
+Гинекология Старого Оскола
+{% endblock title %}
 {% block content %}
 <div class="wrapper">
     <div class="top_content_div">
@@ -16,9 +18,9 @@
         <p style="color:#2D3F50; margin: 0; line-height: normal;">Полноценное</p>
         <p style="color:#00CCFF;">лечение</p>
         <p class="regular">продолжайте свое лечение <br>
-            в нашей областной клиники <br>
+            в нашей областной клинике <br>
             <b>до полного восстановления</b></p>
-        <a class="big_pink_button recall_button"><b>ЗАПИСАТЬСЯ</b><br>НА ПРИЁМ</a>
+        <a class="recall_button big_pink_button" id="recall_button2"><b>ЗАПИСАТЬСЯ</b><br>НА ПРИЁМ</a>
     </div>
     <div class="column icon_content">
         <div class="icon_card">
@@ -80,28 +82,28 @@
         <div class="uslugi_head_content">
             <p>Наши услуги</p>
             <div class="div_for_uslugi_content">
-                <div class="pink_border_button">
+                <div class="pink_border_button" id="diagnostika_mini_button">
                     <a>Диагностика</a>
                 </div>
-                <div class="pink_border_button">
+                <div class="pink_border_button" id="consultation_mini_button">
                     <a>Консультации</a>
                 </div>
-                <div class="pink_border_button">
+                <div class="pink_border_button" id="surgeon_mini_button">
                     <a>Хирургическое лечение</a>
                 </div>
-                <div class="pink_border_button">
+                <div class="pink_border_button" id="help_clients_button">
                     <a>Сопровождение клиента</a>
                 </div>
-                <div class="pink_border_button">
+                <div class="pink_border_button" id="stationary_mini_button">
                     <a>Услуги стационара</a>
                 </div>
-                <div class="pink_border_button">
+                <div class="pink_border_button" id="emergency_help_mini_button">
                     <a>Экстренная хирургическая помощь</a>
                 </div>
-                <div class="pink_border_button">
+                <div class="pink_border_button" id="another_clients_mini_button">
                     <a>Для иногородних пациентов</a>
                 </div>
-                <div class="pink_border_button">
+                <div class="pink_border_button" id="paid_services_mini_button">
                     <a>Платные услуги</a>
                 </div>
             </div>
@@ -111,7 +113,7 @@
         </div>
             
         <div class="uslugi_text_content">
-            <div class="inner_uslugi_text_content">
+            <div class="inner_uslugi_text_content" id="diagnostika_mini">
                 <h1>Диагностика</h1>
                 <p>
                     В гинекологии диагностика включает в себя ряд <br>
@@ -132,6 +134,174 @@
                     <b>4. Рентгенологическая диагностика</b><br>
                     <div class="pink_border_button">
                         <a href="{% url 'diagnostics' %}">Подробнее</a>
+                    </div>
+                </p>
+            </div>
+            <div class="inner_uslugi_text_content" id="consultation_mini">
+                <h1>Консультации</h1>
+                <p>
+                    В гинекологии диагностика включает в себя ряд <br>
+                    методов, которые позволяют выявить причину <br>
+                    заболевания и назначить лечение. Диагностика <br>
+                    проводится при помощи следующих методов:<br>
+                    <br>
+                    <b>1. Лабораторная диагностика, включающая в<br>
+                    себя следующие методы:</b><br>
+                    - общий анализ крови;<br>
+                    - мазок на флору;<br>
+                    - анализ на вирусные инфекции;<br>
+                    <b>2. Инструментальная диагностика.</b><br>
+                    При этом используются такие методы как:<br>
+                    - ультразвуковое исследование<br>
+                    - гистероскопия<br>
+                    <b>3. Эндоскопическая диагностика</b><br>
+                    <b>4. Рентгенологическая диагностика</b><br>
+                    <div class="pink_border_button">
+                        <a href="{% url 'consultations' %}">Подробнее</a>
+                    </div>
+                </p>
+            </div>
+            <div class="inner_uslugi_text_content" id="surgeon_mini">
+                <h1>Хирургическое лечение</h1>
+                <p>
+                    В гинекологии диагностика включает в себя ряд <br>
+                    методов, которые позволяют выявить причину <br>
+                    заболевания и назначить лечение. Диагностика <br>
+                    проводится при помощи следующих методов:<br>
+                    <br>
+                    <b>1. Лабораторная диагностика, включающая в<br>
+                    себя следующие методы:</b><br>
+                    - общий анализ крови;<br>
+                    - мазок на флору;<br>
+                    - анализ на вирусные инфекции;<br>
+                    <b>2. Инструментальная диагностика.</b><br>
+                    При этом используются такие методы как:<br>
+                    - ультразвуковое исследование<br>
+                    - гистероскопия<br>
+                    <b>3. Эндоскопическая диагностика</b><br>
+                    <b>4. Рентгенологическая диагностика</b><br>
+                    <div class="pink_border_button">
+                        <a href="{% url 'surgery' %}">Подробнее</a>
+                    </div>
+                </p>
+            </div>
+            <div class="inner_uslugi_text_content" id="help_clients_mini">
+                <h1>Сопровождение клиента</h1>
+                <p>
+                    В гинекологии диагностика включает в себя ряд <br>
+                    методов, которые позволяют выявить причину <br>
+                    заболевания и назначить лечение. Диагностика <br>
+                    проводится при помощи следующих методов:<br>
+                    <br>
+                    <b>1. Лабораторная диагностика, включающая в<br>
+                    себя следующие методы:</b><br>
+                    - общий анализ крови;<br>
+                    - мазок на флору;<br>
+                    - анализ на вирусные инфекции;<br>
+                    <b>2. Инструментальная диагностика.</b><br>
+                    При этом используются такие методы как:<br>
+                    - ультразвуковое исследование<br>
+                    - гистероскопия<br>
+                    <b>3. Эндоскопическая диагностика</b><br>
+                    <b>4. Рентгенологическая диагностика</b><br>
+                    <div class="pink_border_button">
+                        <a href="{% url 'client_support' %}">Подробнее</a>
+                    </div>
+                </p>
+            </div>
+            <div class="inner_uslugi_text_content" id="stationary_mini">
+                <h1>Услуги стационара</h1>
+                <p>
+                    В гинекологии диагностика включает в себя ряд <br>
+                    методов, которые позволяют выявить причину <br>
+                    заболевания и назначить лечение. Диагностика <br>
+                    проводится при помощи следующих методов:<br>
+                    <br>
+                    <b>1. Лабораторная диагностика, включающая в<br>
+                    себя следующие методы:</b><br>
+                    - общий анализ крови;<br>
+                    - мазок на флору;<br>
+                    - анализ на вирусные инфекции;<br>
+                    <b>2. Инструментальная диагностика.</b><br>
+                    При этом используются такие методы как:<br>
+                    - ультразвуковое исследование<br>
+                    - гистероскопия<br>
+                    <b>3. Эндоскопическая диагностика</b><br>
+                    <b>4. Рентгенологическая диагностика</b><br>
+                    <div class="pink_border_button">
+                        <a href="{% url 'hospital_support' %}">Подробнее</a>
+                    </div>
+                </p>
+            </div>
+            <div class="inner_uslugi_text_content" id="emergency_help_mini">
+                <h1>Экстренная хирургическая помощь</h1>
+                <p>
+                    В гинекологии диагностика включает в себя ряд <br>
+                    методов, которые позволяют выявить причину <br>
+                    заболевания и назначить лечение. Диагностика <br>
+                    проводится при помощи следующих методов:<br>
+                    <br>
+                    <b>1. Лабораторная диагностика, включающая в<br>
+                    себя следующие методы:</b><br>
+                    - общий анализ крови;<br>
+                    - мазок на флору;<br>
+                    - анализ на вирусные инфекции;<br>
+                    <b>2. Инструментальная диагностика.</b><br>
+                    При этом используются такие методы как:<br>
+                    - ультразвуковое исследование<br>
+                    - гистероскопия<br>
+                    <b>3. Эндоскопическая диагностика</b><br>
+                    <b>4. Рентгенологическая диагностика</b><br>
+                    <div class="pink_border_button">
+                        <a href="{% url 'emergency_care' %}">Подробнее</a>
+                    </div>
+                </p>
+            </div>
+            <div class="inner_uslugi_text_content" id="another_clients_mini">
+                <h1>Для иногородних пациентов</h1>
+                <p>
+                    В гинекологии диагностика включает в себя ряд <br>
+                    методов, которые позволяют выявить причину <br>
+                    заболевания и назначить лечение. Диагностика <br>
+                    проводится при помощи следующих методов:<br>
+                    <br>
+                    <b>1. Лабораторная диагностика, включающая в<br>
+                    себя следующие методы:</b><br>
+                    - общий анализ крови;<br>
+                    - мазок на флору;<br>
+                    - анализ на вирусные инфекции;<br>
+                    <b>2. Инструментальная диагностика.</b><br>
+                    При этом используются такие методы как:<br>
+                    - ультразвуковое исследование<br>
+                    - гистероскопия<br>
+                    <b>3. Эндоскопическая диагностика</b><br>
+                    <b>4. Рентгенологическая диагностика</b><br>
+                    <div class="pink_border_button">
+                        <a href="{% url 'non-resident_clients' %}">Подробнее</a>
+                    </div>
+                </p>
+            </div>
+            <div class="inner_uslugi_text_content" id="paid_services_mini">
+                <h1>Платные услуги</h1>
+                <p>
+                    В гинекологии диагностика включает в себя ряд <br>
+                    методов, которые позволяют выявить причину <br>
+                    заболевания и назначить лечение. Диагностика <br>
+                    проводится при помощи следующих методов:<br>
+                    <br>
+                    <b>1. Лабораторная диагностика, включающая в<br>
+                    себя следующие методы:</b><br>
+                    - общий анализ крови;<br>
+                    - мазок на флору;<br>
+                    - анализ на вирусные инфекции;<br>
+                    <b>2. Инструментальная диагностика.</b><br>
+                    При этом используются такие методы как:<br>
+                    - ультразвуковое исследование<br>
+                    - гистероскопия<br>
+                    <b>3. Эндоскопическая диагностика</b><br>
+                    <b>4. Рентгенологическая диагностика</b><br>
+                    <div class="pink_border_button">
+                        <a href="{% url 'paid_services' %}">Подробнее</a>
                     </div>
                 </p>
             </div>
@@ -292,7 +462,7 @@
                         <p style="color: #FF6692;">Нет ответа на ваш вопрос?</p>
                         <p style="color: white;">Задайте его и получите<br>
                             ответ в ближайшее время</p>
-                        <div class="navbar_button pink_button ask_button" style="background-color: #FF6692;">
+                        <div class="ask_button navbar_button pink_button" id="ask_button" style="background-color: #FF6692;">
                             <a>Задать вопрос</a>
                         </div>
                     </div>
@@ -302,7 +472,7 @@
                             всю информацию <br>
                             о конкретно вашем <br>
                             случае</p>
-                            <div class="navbar_button pink_button recall_button" style="background-color: #FF6692;">
+                            <div class="recall_button navbar_button pink_button" id="recall_button3" style="background-color: #FF6692;">
                                 <a>Записаться на прием</a>
                             </div>
                     </div>
@@ -314,41 +484,44 @@
         <div class="ask_question row">
             <h1>Задать вопрос</h1>
             <div class="ask_question_form column">
-                <form  class="ask_question_form" id='ask_question_form_home' method="POST" action="#" enctype="multipart/form-data">
+                <form  class="ask_question_form" id='ask_question_form_home' method="POST" action="{% url 'home' %}"enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="form-group">
+                        <input type="hidden" name="form_type" value="formTwo">
                         <div class="row window_ask"> 
                             <div class="col-6 col-sm-6 col-md-6 col-lg-6">
-                                <input type="text" class="form-control" name="ask_first_name" placeholder="Имя"  required=True>
+                                <input type="text" class="form-control" name="ask_modal_firstname" placeholder="Имя"  required=True>
                             </div>
                             <div class="col-6 col-sm-6 col-md-6 col-lg-6">
-                                <input type="text" class="form-control" name="ask_mail" placeholder="E-mail" required=True pattern="[0-9.)(+-]{4,20}$">
+                                <input type="text" class="form-control" name="ask_modal_mail" placeholder="E-mail" required=True pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                             </div>
                         </div>
                         <div class="row window_ask"> 
                             <div class="col-6 col-sm-6 col-md-6 col-lg-6">
-                                <input type="text" class="form-control" name="ask_second_name" placeholder="Фамилия"  required=True>
+                                <input type="text" class="form-control" name="ask_modal_lastname" placeholder="Фамилия"  required=True>
                             </div>
                             <div class="col-6 col-sm-6 col-md-6 col-lg-6">
-                                <input type="text" class="form-control" name="ask_telephone" placeholder="Телефон" required=True pattern="[0-9.)(+-]{4,20}$">
+                                <input type="text" class="form-control" name="ask_modal_phone" placeholder="Телефон" required=True pattern="[0-9.)(+-]{4,20}$">
                             </div>
                         </div>
                         <div class="row window_ask"> 
                             <div class="col-lg-12">
-                                <textarea type="text" class="form-control" name="ask_message" placeholder="Сообщение" required=True></textarea>                          
+                                <textarea type="text" class="form-control" name="ask_modal_message" placeholder="Сообщение" required=True></textarea>                          
                             </div>
                         </div>
                     </div>
                     <div class="row window_ask"> 
                         <div class="col-6 col-sm-6 col-md-6 col-lg-6">
                             <div class="form-check confidentional_check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <input class="form-check-input" type="checkbox" value="" id="ask_modal_confidentional_check"required="True">
                                 <p>Нажимая на кнопку, вы даете согласие на обработку персональных 
                                     данных и соглашаетесь с Политикой конфиденциальности</p>
                             </div>                        </div>
                         <div class="col-6 col-sm-6 col-md-6 col-lg-6 window_ask_button">
                             <div class="navbar_button pink_button" style="background-color: #FF6692;">
-                                <a>Задать вопрос</a>
+                                <div class="ask_button">
+                                    <input type="submit" value="Задать вопрос" form="ask_question_form_home" class="navbar_button pink_button" name="send_ask_form"/>
+                                </div>  
                             </div>                       
                         </div>
                     </div>
@@ -360,4 +533,8 @@
         </div>
     </div>
 </div>
-{% endblock %}
+{% endblock %}    
+
+{% block custom_js %}
+<script src="{% static '/js/main.js' %}"></script>
+{% endblock custom_js %}

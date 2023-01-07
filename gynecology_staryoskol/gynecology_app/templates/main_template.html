@@ -18,6 +18,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/modal.css' %}">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/main.css' %}">
 
   
 
@@ -47,50 +49,77 @@
     <div class="main-wrapper main-wrapper-1">
         {% block content %}
 
-        {% endblock content%}
+        {% endblock content %}
+        {% if telephone %}
+        <div class="data_sent_content">
+            <div class="data_sent_window">
+                <div class="data_sent_close">
+                    <img src="{% static 'svg/x.svg' %}">
+                </div>
+                <div class="data_sent_text row">
+                    <h1>Ваши данные отправлены</h1>
+                    <p>Спасибо за уделенное время</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% if mail %}
+        <div class="data_sent_content">
+            <div class="data_sent_window">
+                <div class="data_sent_close">
+                    <img src="{% static 'svg/x.svg' %}">
+                </div>
+                <div class="data_sent_text row">
+                    <h1>Ваши данные отправлены</h1>
+                    <p>Спасибо за уделенное время.<br>Наш сотрудник ответит вам в ближайшее время</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
         <div class="ask_modal_content">
           <div class="ask_modal_window">
-              <div class="ask_modal_close">
+              <div class="ask_modal_close" id="ask_modal_close">
                   <img src="{% static 'svg/x.svg' %}">
               </div>
               <div class="ask_modal_text row">
                   <h1>Задать вопрос</h1>
                   <p>Специалист ответит на ваш вопрос в ближайшее время</p>
               <div class="ask_modal_form column">
-                  <form  class="ask_modal_form" id='ask_modal_form_home' method="POST" action="#" enctype="multipart/form-data">
+                  <form  class="ask_modal_form" id='ask_modal_form_home2' method="POST" action="{% url 'home' %}" enctype="multipart/form-data">
                       {% csrf_token %}
                       <div class="form-group">
+                        <input type="hidden" name="form_type" value="formTwo">
                           <div class="row window_ask_modal"> 
                               <div class="col-lg-6">
-                                  <input type="text" class="form-control" name="ask_modal_firstname" placeholder="Имя"  required=True>
+                                  <input type="text" class="form-control" name="ask_modal_firstname" placeholder="Имя"  required="True">
                               </div>
                               <div class="col-lg-6">
-                                  <input type="text" class="form-control" name="ask_modal_mail" placeholder="Email"  required=True>
+                                  <input type="text" class="form-control" name="ask_modal_mail" placeholder="Email"  required="True">
                               </div>
                           </div>
                           <div class="row window_ask_modal"> 
                               <div class="col-lg-6">
-                                  <input type="text" class="form-control" name="ask_modal_lastname" placeholder="Фамилия"  required=True>
+                                  <input type="text" class="form-control" name="ask_modal_lastname" placeholder="Фамилия"  required="True">
                               </div>
                               <div class="col-lg-6">
-                                  <input type="text" class="form-control" name="ask_modal_phone" placeholder="Телефон"  required=True>
+                                  <input type="text" class="form-control" name="ask_modal_phone" placeholder="Телефон"  required="True">
                               </div>
                           </div>
                           <div class="row window_ask_modal"> 
                               <div class="col-lg-12">
-                                  <textarea type="text" class="form-control" name="ask_modal_message" placeholder="Сообщение" required=True></textarea>                          
+                                  <textarea type="text" class="form-control" name="ask_modal_message" placeholder="Сообщение" required="True"></textarea>                          
                               </div>
                           </div>
                       </div>
                       <div class="row window_ask_modal"> 
                           <div class="col-lg-12 window_ask_modal_button">
-                              <div class="navbar_button pink_button" style="background-color: #FF6692;">
-                                  <a>Заказать звонок</a>
-                              </div>                       
+                              <div class="ask_button navbar_button pink_button" style="background-color: #FF6692; margin-left: 0px;">
+                                <input type="submit" value="Задать вопрос" form="ask_modal_form_home2" class="navbar_button pink_button" name="send_ask_form"/>
+                              </div>                   
                           </div>
                           <div class="col-lg-12">
                               <div class="form-check ask_modal_confidentional_check">
-                                  <input class="form-check-input" type="checkbox" value="" id="ask_modal_confidentional_check">
+                                  <input class="form-check-input" type="checkbox" value="" id="ask_modal_confidentional_check" required="True">
                                   <p>Нажимая на кнопку, вы даете согласие на обработку персональных 
                                       данных и соглашаетесь с Политикой конфиденциальности</p>
                               </div>                        
@@ -103,7 +132,7 @@
       </div>
       <div class="recall_content">
           <div class="recall_window">
-              <div class="recall_close">
+              <div class="recall_close" id="recall_close">
                   <img src="{% static 'svg/x.svg' %}">
               </div>
               <div class="recall_text row">
@@ -111,35 +140,38 @@
                   <p>Специалист перезвонит Вам и уточнит возможность<br>
                       посетить отделение в ближайшее время</p>
               <div class="recall_form column">
-                  <form  class="recall_form" id='recall_form_home' method="POST" action="#" enctype="multipart/form-data">
+                  <form  class="recall_form" id='recall_form_home' method="POST" action="{% url 'home' %}" enctype="multipart/form-data">
                       {% csrf_token %}
                       <div class="form-group">
                           <div class="row window_recall"> 
                               <div class="col-lg-12">
-                                  <input type="text" class="form-control" name="recall_phone" placeholder="Телефонный номер"  required=True>
+                                  <input type="text" id="recall_phone" class="form-control" name="recall_phone" placeholder="Телефонный номер"  required="True">
                               </div>
                           </div>
                           <div class="row window_recall"> 
                               <div class="col-lg-12">
-                                  <input type="text" class="form-control" name="recall_time" placeholder="Удобное время для звонка"  required=True>
+                                  <input type="text" class="form-control" id="recall_time" name="recall_time" placeholder="Удобное время для звонка" required="True">
                               </div>
                           </div>
                       </div>
                           <div class="col-lg-12">
                               <div class="form-check time_recall_check">
-                                  <input class="form-check-input" type="checkbox" value="" id="time_recall_check">
+                                  <input class="form-check-input" type="checkbox" value="ok" id="time_recall_check" name="recall_time_check">
                                   <p>Перезвонить в ближайшее время</p>
                               </div>                        
                           </div>
                       <div class="row window_recall"> 
                           <div class="col-lg-12 window_recall_button">
-                              <div class="navbar_button pink_button" style="background-color: #FF6692;">
-                                  <a>Заказать звонок</a>
+                              <!-- <div class="navbar_button pink_button">
+                                  <a href="javascript:{}" onclick="recall_form_send()" id="send_recall_form" form="recall_form_home">Заказать звонок</a>
+                              </div>                        -->
+                              <div class="recall_button_submit navbar_button pink_button" style="margin-left: 0px;">
+                                  <input type="submit" value="Отправить" form="recall_form_home" class="navbar_button pink_button" name="send_recall_form"/>
                               </div>                       
                           </div>
                           <div class="col-lg-12">
                               <div class="form-check recall_confidentional_check">
-                                  <input class="form-check-input" type="checkbox" value="" id="recall_confidentional_check">
+                                  <input class="form-check-input" type="checkbox" value="" id="recall_confidentional_check" required="True">
                                   <p>Нажимая на кнопку, вы даете согласие на обработку персональных 
                                       данных и соглашаетесь с Политикой конфиденциальности</p>
                               </div>                        
@@ -147,17 +179,6 @@
                       </div>
                   </form>
               </div>
-              </div>
-          </div>
-      </div>
-      <div class="data_sent_content">
-          <div class="data_sent_window">
-              <div class="data_sent_close">
-                  <img src="{% static 'svg/x.svg' %}">
-              </div>
-              <div class="data_sent_text row">
-                  <h1>Ваши данные отправлены</h1>
-                  <p>Спасибо за уделенное время</p>
               </div>
           </div>
       </div>
@@ -171,8 +192,8 @@
     <!-- <script src="{% static '/modules/bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="{% static '/modules/nicescroll/jquery.nicescroll.min.js' %}"></script> -->
     <!-- <script src="{% static '/modules/moment.min.js' %}"></script> -->
-    <script src="{% static '/js/stisla.js' %}"></script>
-    <script src="{% static '/js/main.js' %}"></script>
+    <!-- <script src="{% static '/js/stisla.js' %}"></script> -->
+
     
     <!-- JS Libraies -->
     <!-- <script src="{% static '/modules/simple-weather/jquery.simpleWeather.min.js' %}"></script>
@@ -182,12 +203,13 @@
     <script src="{% static '/modules/chocolat/dist/js/jquery.chocolat.min.js' %}"></script> -->
   
     <!-- Page Specific JS File -->
-    <script src="{% static '/js/page/index-0.js' %}"></script>
+    <!-- <script src="{% static '/js/page/index-0.js' %}"></script> -->
     
     <!-- Template JS File -->
-    <script src="{% static '/js/scripts.js' %}"></script>
+    <!-- <script src="{% static '/js/scripts.js' %}"></script> -->
     <script src="{% static '/js/custom.js' %}"></script>
-    <script src="{% static '/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static '/js/modal.js' %}"></script>
+    <!-- <script src="{% static '/js/owl.carousel.min.js' %}"></script> -->
 
   {% block custom_js %}
   {% endblock custom_js %}

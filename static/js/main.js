@@ -1,25 +1,24 @@
 // Показ модуля спросить
 const div = document.querySelectorAll('.ask_modal_content')[0];
-
-document.querySelectorAll('.ask_button')[0].addEventListener('click', function () {
+document.querySelector('#ask_button').addEventListener('click', function () {
     div.style.display = 'flex';
 })
-document.querySelectorAll('.ask_modal_close')[0].addEventListener('click', function () {
+document.querySelector('#ask_modal_close').addEventListener('click', function () {
     div.style.display = 'none';
 })
 // Показ модуля перезвонить
 const div2 = document.querySelectorAll('.recall_content')[0];
 
-document.querySelectorAll('.recall_button')[0].addEventListener('click', function () {
+document.querySelector('#recall_button').addEventListener('click', function () {
     div2.style.display = 'flex';
 })
-document.querySelectorAll('.recall_button')[1].addEventListener('click', function () {
+document.querySelector('#recall_button2').addEventListener('click', function () {
     div2.style.display = 'flex';
 })
-document.querySelectorAll('.recall_button')[2].addEventListener('click', function () {
+document.querySelector('#recall_button3').addEventListener('click', function () {
     div2.style.display = 'flex';
 })
-document.querySelectorAll('.recall_close')[0].addEventListener('click', function () {
+document.querySelector('#recall_close').addEventListener('click', function () {
     div2.style.display = 'none';
 })
 // Раскрытие списка вопросов и ответов
@@ -106,4 +105,105 @@ document.querySelectorAll('.minus')[5].addEventListener('click', function () {
     answer5.style.display = 'none';
     answer_plus5.style.display = 'flex';
     answer_minus5.style.display = 'none';
+})
+
+// Выбор услуг в миниокне
+const diagnostika_mini = document.getElementById('diagnostika_mini')
+const consultation_mini = document.getElementById('consultation_mini')
+const surgeon_mini = document.getElementById('surgeon_mini')
+const help_clients_mini = document.getElementById('help_clients_mini')
+const stationary_mini = document.getElementById('stationary_mini')
+const emergency_help_mini = document.getElementById('emergency_help_mini')
+const another_clients_mini = document.getElementById('another_clients_mini')
+const paid_services_mini = document.getElementById('paid_services_mini')
+
+document.querySelector('#diagnostika_mini_button').addEventListener('click', function () {
+    diagnostika_mini.style.display = 'flex';
+    consultation_mini.style.display = 'none';
+    surgeon_mini.style.display = 'none';
+    help_clients_mini.style.display = 'none';
+    stationary_mini.style.display = 'none';
+    emergency_help_mini.style.display = 'none';
+    another_clients_mini.style.display = 'none';
+    paid_services_mini.style.display = 'none';
+})
+document.querySelector('#consultation_mini_button').addEventListener('click', function () {
+    diagnostika_mini.style.display = 'none';
+    consultation_mini.style.display = 'flex';
+    surgeon_mini.style.display = 'none';
+    help_clients_mini.style.display = 'none';
+    stationary_mini.style.display = 'none';
+    emergency_help_mini.style.display = 'none';
+    another_clients_mini.style.display = 'none';
+    paid_services_mini.style.display = 'none';
+})
+document.querySelector('#surgeon_mini_button').addEventListener('click', function () {
+    diagnostika_mini.style.display = 'none';
+    consultation_mini.style.display = 'none';
+    surgeon_mini.style.display = 'flex';
+    help_clients_mini.style.display = 'none';
+    stationary_mini.style.display = 'none';
+    emergency_help_mini.style.display = 'none';
+    another_clients_mini.style.display = 'none';
+    paid_services_mini.style.display = 'none';
+})
+document.querySelector('#surgeon_mini_button').addEventListener('click', function () {
+    diagnostika_mini.style.display = 'none';
+    consultation_mini.style.display = 'none';
+    surgeon_mini.style.display = 'flex';
+    help_clients_mini.style.display = 'none';
+    stationary_mini.style.display = 'none';
+    emergency_help_mini.style.display = 'none';
+    another_clients_mini.style.display = 'none';
+    paid_services_mini.style.display = 'none';
+})
+document.querySelector('#help_clients_button').addEventListener('click', function () {
+    diagnostika_mini.style.display = 'none';
+    consultation_mini.style.display = 'none';
+    surgeon_mini.style.display = 'none';
+    help_clients_mini.style.display = 'flex';
+    stationary_mini.style.display = 'none';
+    emergency_help_mini.style.display = 'none';
+    another_clients_mini.style.display = 'none';
+    paid_services_mini.style.display = 'none';
+})
+document.querySelector('#stationary_mini_button').addEventListener('click', function () {
+    diagnostika_mini.style.display = 'none';
+    consultation_mini.style.display = 'none';
+    surgeon_mini.style.display = 'none';
+    help_clients_mini.style.display = 'none';
+    stationary_mini.style.display = 'flex';
+    emergency_help_mini.style.display = 'none';
+    another_clients_mini.style.display = 'none';
+    paid_services_mini.style.display = 'none';
+})
+document.querySelector('#emergency_help_mini_button').addEventListener('click', function () {
+    diagnostika_mini.style.display = 'none';
+    consultation_mini.style.display = 'none';
+    surgeon_mini.style.display = 'none';
+    help_clients_mini.style.display = 'none';
+    stationary_mini.style.display = 'none';
+    emergency_help_mini.style.display = 'flex';
+    another_clients_mini.style.display = 'none';
+    paid_services_mini.style.display = 'none';
+})
+document.querySelector('#another_clients_mini_button').addEventListener('click', function () {
+    diagnostika_mini.style.display = 'none';
+    consultation_mini.style.display = 'none';
+    surgeon_mini.style.display = 'none';
+    help_clients_mini.style.display = 'none';
+    stationary_mini.style.display = 'none';
+    emergency_help_mini.style.display = 'none';
+    another_clients_mini.style.display = 'flex';
+    paid_services_mini.style.display = 'none';
+})
+document.querySelector('#paid_services_mini_button').addEventListener('click', function () {
+    diagnostika_mini.style.display = 'none';
+    consultation_mini.style.display = 'none';
+    surgeon_mini.style.display = 'none';
+    help_clients_mini.style.display = 'none';
+    stationary_mini.style.display = 'none';
+    emergency_help_mini.style.display = 'none';
+    another_clients_mini.style.display = 'none';
+    paid_services_mini.style.display = 'flex';
 })

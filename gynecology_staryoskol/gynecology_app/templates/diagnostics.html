@@ -19,10 +19,10 @@
                 позволят в кратчайшие сроки<br>
                 найти источник заболевания</p>
             <div class="banner_button_div row">
-                <div class="pink_noborder_button">
+                <div class="recall_button pink_noborder_button" id="recall_button2">
                     <a>Записаться на прием</a>
                 </div>
-                <div class="white_border_button">
+                <div class="ask_button white_border_button" id="ask_button">
                     <a>Задать вопрос</a>
                 </div>
             </div>
@@ -82,13 +82,17 @@
             воспользуйтесь нашими услугами
         </p>
         <div class="banner_button_div row">
-            <div class="pink_noborder_button">
+            <div class="recall_button pink_noborder_button" id="recall_button3">
                 <a>Записаться на прием</a>
             </div>
-            <div class="white_border_button">
+            <div class="ask_button white_border_button" id="ask_button2">
                 <a>Задать вопрос</a>
             </div>
         </div>
     </div>
 </div>
 {% endblock %}
+
+{% block custom_js %}
+<script src="{% static '/js/page.js' %}"></script>
+{% endblock custom_js %}

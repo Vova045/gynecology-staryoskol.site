@@ -210,7 +210,9 @@ p.text13px {
 }
 .uslugi_text_content {
     width: 50%;height: fit-content; padding-left: 0; padding-right: 0;
-    
+}
+.inner_uslugi_text_content {
+    display: flex; flex-direction: column;
 }
 .uslugi_text_content h1 {
     font-size: 21px; font-weight: 600; padding-bottom: 15px; padding-top: 60px;
@@ -332,6 +334,47 @@ p.text13px {
 
 .window_ask_button {
     display: flex; flex-direction: row-reverse; margin-top: 0;
+}
+.window_recall_button .navbar_button a{
+    color: white;
+}
+.recall_button_submit input {
+    border: none;
+    background: none;
+    padding: 3px; padding-left: 6px; padding-right: 6px;
+    margin: 0;
+    font-size: 12px;
+}
+.ask_button input {
+    border: none;
+    background: none;
+    padding: 3px; padding-left: 12px; padding-right: 12px;
+    margin: 0;
+
+}
+#diagnostika_mini {
+    display: flex; 
+}
+#consultation_mini {
+    display: none;
+}
+#surgeon_mini {
+    display: none;
+}
+#help_clients_mini {
+    display: none;
+}
+#stationary_mini {
+    display: none;
+}
+#emergency_help_mini {
+    display: none;
+}
+#another_clients_mini {
+    display: none;
+}
+#paid_services_mini {
+    display: none;
 }
 
 @media (min-width: 1px) and (max-width: 250px) {
