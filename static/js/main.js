@@ -106,12 +106,9 @@ document.querySelectorAll('.minus')[5].addEventListener('click', function () {
     answer_plus5.style.display = 'flex';
     answer_minus5.style.display = 'none';
 })
-if (document.querySelectorAll('.data_sent_close')[0]) {
-    document.querySelectorAll('.data_sent_close')[0].addEventListener('click', function () {
-        document.querySelectorAll('.data_sent_content')[0].style.display = 'none';
-    })
-}
-
+document.querySelectorAll('.data_sent_close')[0].addEventListener('click', function () {
+    document.querySelectorAll('.data_sent_content')[0].style.display = 'none';
+})
 // Выбор услуг в миниокне
 const diagnostika_mini = document.getElementById('diagnostika_mini')
 const consultation_mini = document.getElementById('consultation_mini')
