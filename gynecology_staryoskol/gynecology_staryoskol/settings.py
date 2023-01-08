@@ -37,9 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'gynecology_app',
-    'captcha',
-    'snowpenguin.django.recaptcha3',
+    'gynecology_app'
 ]
 
 MIDDLEWARE = [
