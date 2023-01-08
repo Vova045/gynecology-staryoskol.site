@@ -209,6 +209,25 @@
     <!-- <script src="{% static '/js/scripts.js' %}"></script> -->
     <script src="{% static '/js/custom.js' %}"></script>
     <script src="{% static '/js/modal.js' %}"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+    <script src='https://www.google.com/recaptcha/api.js?render={{recaptcha_site_key}}'></script>
+
+    <script>
+        grecaptcha.ready(function() {
+            $('#ask_question_form_home').submit(function(e){
+                  var form = this;
+                  e.preventDefault()
+                  grecaptcha.execute('reCAPTCHA_site_key', {action: 'ask_question_form_home'}).then(function(token) {
+                    $('#recaptcha').val(token)
+                    form.submit()
+                  });
+              })
+          });
+    </script>
+    
     <!-- <script src="{% static '/js/owl.carousel.min.js' %}"></script> -->
 
   {% block custom_js %}

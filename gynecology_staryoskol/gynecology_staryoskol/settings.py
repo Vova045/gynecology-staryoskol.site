@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gynecology_app',
+    'captcha',
+    'snowpenguin.django.recaptcha3',
 ]
 
 MIDDLEWARE = [
@@ -150,3 +152,9 @@ EMAIL_HOST_USER = 'vovatsar@bk.ru'
 EMAIL_HOST_PASSWORD = 't9e0gD28KZW8wC9XtgNm'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
+
+RECAPTCHA_PUBLIC_KEY = '6LfQ6NwjAAAAAGc9bnlaSxPvEHGx4OLMhsfO5EyV'
+RECAPTCHA_PRIVATE_KEY = '6LfQ6NwjAAAAAEmaEOnIVulZsjwAuKN3BuNP3tNz'
+RECAPTCHA_DEFAULT_ACTION = 'generic'
+RECAPTCHA_SCORE_THRESHOLD = 0.5
+RECAPTCHA_LANGUAGE = 'en'

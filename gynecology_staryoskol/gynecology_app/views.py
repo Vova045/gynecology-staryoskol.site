@@ -21,7 +21,7 @@ def send_recall_message(request):
         msg = EmailMultiAlternatives(subject,msg,form_email,[to])
         msg.content_subtype='html'
         msg.send()
-        return render(request,"home.html", {'telephone': telephone})
+        return render(request,"home.html", {'telephone': telephone, 'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
     else:
         return render (request, 'home.html',) 
 

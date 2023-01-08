@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.urls import path
 from gynecology_app import views
+from django.urls import include
 
 urlpatterns = [
     path('', views.home, name='home'),
