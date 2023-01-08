@@ -21,6 +21,14 @@ document.querySelector('#recall_button3').addEventListener('click', function () 
 document.querySelector('#recall_close').addEventListener('click', function () {
     div2.style.display = 'none';
 })
+if (document.querySelectorAll('.data_sent_content')[0]) {
+    document.querySelectorAll('.data_sent_close')[0].addEventListener('click', function () {
+        console.log("кнопка нажата")
+        document.querySelectorAll('.data_sent_content')[0].style.display = 'none';
+    })
+}
+
+
 // Раскрытие списка вопросов и ответов
 const answer = document.querySelectorAll('.answer')[0];
 const answer_plus = document.querySelectorAll('.plus')[0];
@@ -106,9 +114,7 @@ document.querySelectorAll('.minus')[5].addEventListener('click', function () {
     answer_plus5.style.display = 'flex';
     answer_minus5.style.display = 'none';
 })
-document.querySelectorAll('.data_sent_close')[0].addEventListener('click', function () {
-    document.querySelectorAll('.data_sent_content')[0].style.display = 'none';
-})
+
 // Выбор услуг в миниокне
 const diagnostika_mini = document.getElementById('diagnostika_mini')
 const consultation_mini = document.getElementById('consultation_mini')
