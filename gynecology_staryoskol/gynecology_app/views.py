@@ -1,117 +1,248 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.core.mail import EmailMultiAlternatives
 from django.conf import settings
-
+from django.http import HttpResponseRedirect
+from django.urls import resolve
    
+
 def send_recall_message(request):
     if request.method == 'POST':
-        subject='Заявка на звонок'
-        telephone = request.POST.get('recall_phone')
-        time = request.POST.get('recall_time')
-        check = request.POST.get('recall_time_check')
-        form_email = settings.EMAIL_HOST_USER
-        to='vovatsar@bk.ru'
-        recall_time_check=f"Нужно перезвонить в ближайшее время"
-        recall_time=f"Нужно перезвонить в {time}."
-        if check != None:
-            need_msg = recall_time_check
-        else:
-            need_msg = recall_time
-        msg=(f"<p>Поступила заявка на звонок от {telephone}.{need_msg}</p>")
-        msg = EmailMultiAlternatives(subject,msg,form_email,[to])
-        msg.content_subtype='html'
-        msg.send()
-        return render(request,"home.html", {'telephone': telephone, 'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
+        if request.POST.get("form_type") == 'formOne':
+            telephone = request.POST.get('recall_phone')
+            time = request.POST.get('recall_time')
+            check = request.POST.get('recall_time_check')
+            recall_time_check=f"Нужно перезвонить в ближайшее время"
+            recall_time=f"Нужно перезвонить в {time}."
+            if check != None:
+                need_msg = recall_time_check
+            else:
+                need_msg = recall_time
+            rcl_msg=(f"<p>Поступила заявка на звонок от {telephone}.{need_msg}</p>")
+            return render(request,str(resolve(request.path_info).url_name)+'.html', {'rcl_msg': rcl_msg, 'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
+        if request.POST.get("form_type") == 'formThree':
+            subject='Заявка на звонок'
+            form_email = settings.EMAIL_HOST_USER
+            telephone = "телефон"
+            to='vovatsar@bk.ru'
+            rcl_msg = request.POST.get('g-recaptcha_rcl_msg')
+            rcl_msg = EmailMultiAlternatives(subject,rcl_msg,form_email,[to])
+            rcl_msg.content_subtype='html'
+            if request.recaptcha_is_valid:
+                rcl_msg.send()
+                return render(request,str(resolve(request.path_info).url_name)+'.html', {'telephone': telephone,'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
     else:
-        return render (request, 'home.html',) 
+        return render (request, str(resolve(request.path_info).url_name)+'.html',) 
 
 def send_ask_message(request):
     if request.method == 'POST':
-        subject='Новый вопрос'
-        firstname = request.POST.get('ask_modal_firstname')
-        lastname = request.POST.get('ask_modal_lastname')
-        mail = request.POST.get('ask_modal_mail')
-        phone = request.POST.get('ask_modal_phone')
-        message = request.POST.get('ask_modal_message')
-        form_email = settings.EMAIL_HOST_USER
-        to='vovatsar@bk.ru'
-        msg=(f"<p>Поступила новый вопрос на сайте от {lastname}{firstname}.Текст такой:{message}.<br> Электронная почта:{mail},Телефонный номер:{phone}</p>")
-        msg = EmailMultiAlternatives(subject,msg,form_email,[to])
-        msg.content_subtype='html'
-        msg.send()
-        return render(request,"home.html", {'mail': mail})
+        if request.POST.get("form_type") == 'formTwo':
+            subject='Новый вопрос'
+            firstname = request.POST.get('ask_modal_firstname')
+            lastname = request.POST.get('ask_modal_lastname')
+            mail = request.POST.get('ask_modal_mail')
+            phone = request.POST.get('ask_modal_phone')
+            message = request.POST.get('ask_modal_message')
+            msg=(f"<p>Поступила новый вопрос на сайте от {lastname}{firstname}.Текст такой:{message}.<br> Электронная почта:{mail},Телефонный номер:{phone}</p>")
+            return render(request,str(resolve(request.path_info).url_name)+'.html', {'msg': msg, 'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
+        if request.POST.get("form_type") == 'formFour':
+            msg = request.POST.get('g-recaptcha_msg')
+            subject='Новый вопрос'
+            mail = "отправлено"
+            form_email = settings.EMAIL_HOST_USER
+            to='vovatsar@bk.ru'
+            msg = EmailMultiAlternatives(subject,msg,form_email,[to])
+            msg.content_subtype='html'
+            if request.recaptcha_is_valid:
+                msg.send()
+                return render(request,str(resolve(request.path_info).url_name)+'.html', {'mail': mail, 'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
     else:
-        return render (request, 'home.html',) 
+        return render (request, str(resolve(request.path_info).url_name)+'.html',) 
 
 
 def home(request):
     if request.method == "POST":
         if request.POST.get("form_type") == 'formTwo':
             return send_ask_message(request)
-        else:
+        elif request.POST.get("form_type") == 'formOne':
             return send_recall_message(request)
-    return render (request, 'home.html',) 
+        elif request.POST.get("form_type") == 'formThree':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formFour':
+            return send_ask_message(request)
+    return render (request, 'home.html', {'site_key': settings.RECAPTCHA_PUBLIC_KEY}) 
 def diagnostics(request):
     if request.method == "POST":
-        return send_recall_message(request)
-    return render (request, 'diagnostics.html',) 
+        if request.POST.get("form_type") == 'formTwo':
+            return send_ask_message(request)
+        elif request.POST.get("form_type") == 'formOne':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formThree':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formFour':
+            return send_ask_message(request)
+    return render (request, 'diagnostics.html', {'site_key': settings.RECAPTCHA_PUBLIC_KEY})
 def for_clients(request):
     if request.method == "POST":
-        return send_recall_message(request)
-    return render (request, 'for_clients.html',) 
+        if request.POST.get("form_type") == 'formTwo':
+            return send_ask_message(request)
+        elif request.POST.get("form_type") == 'formOne':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formThree':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formFour':
+            return send_ask_message(request)
+    return render (request, 'for_clients.html', {'site_key': settings.RECAPTCHA_PUBLIC_KEY})
 def department(request):
     if request.method == "POST":
-        return send_recall_message(request)
-    return render (request, 'department.html',) 
+        if request.POST.get("form_type") == 'formTwo':
+            return send_ask_message(request)
+        elif request.POST.get("form_type") == 'formOne':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formThree':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formFour':
+            return send_ask_message(request)
+    return render (request, 'department.html', {'site_key': settings.RECAPTCHA_PUBLIC_KEY})
 def hospital(request):
     if request.method == "POST":
-        return send_recall_message(request)
-    return render (request, 'hospital.html',) 
+        if request.POST.get("form_type") == 'formTwo':
+            return send_ask_message(request)
+        elif request.POST.get("form_type") == 'formOne':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formThree':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formFour':
+            return send_ask_message(request)
+    return render (request, 'hospital.html', {'site_key': settings.RECAPTCHA_PUBLIC_KEY})
 def contacts(request):
     if request.method == "POST":
-        return send_recall_message(request)
-    return render (request, 'contacts.html',) 
+        if request.POST.get("form_type") == 'formTwo':
+            return send_ask_message(request)
+        elif request.POST.get("form_type") == 'formOne':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formThree':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formFour':
+            return send_ask_message(request)
+    return render (request, 'contacts.html', {'site_key': settings.RECAPTCHA_PUBLIC_KEY})
 def services(request):
     if request.method == "POST":
-        return send_recall_message(request)
-    return render (request, 'services.html',) 
+        if request.POST.get("form_type") == 'formTwo':
+            return send_ask_message(request)
+        elif request.POST.get("form_type") == 'formOne':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formThree':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formFour':
+            return send_ask_message(request)
+    return render (request, 'services.html', {'site_key': settings.RECAPTCHA_PUBLIC_KEY})
 def doctors(request):
     if request.method == "POST":
-        return send_recall_message(request)
-    return render (request, 'doctors.html',) 
+        if request.POST.get("form_type") == 'formTwo':
+            return send_ask_message(request)
+        elif request.POST.get("form_type") == 'formOne':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formThree':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formFour':
+            return send_ask_message(request)
+    return render (request, 'doctors.html', {'site_key': settings.RECAPTCHA_PUBLIC_KEY})
 def questions_and_answers(request):
     if request.method == "POST":
-        return send_recall_message(request)
-    return render (request, 'questions_and_answers.html',) 
+        if request.POST.get("form_type") == 'formTwo':
+            return send_ask_message(request)
+        elif request.POST.get("form_type") == 'formOne':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formThree':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formFour':
+            return send_ask_message(request)
+    return render (request, 'questions_and_answers.html', {'site_key': settings.RECAPTCHA_PUBLIC_KEY})
 def privacy_policy(request):
     if request.method == "POST":
-        return send_recall_message(request)
-    return render (request, 'privacy_policy.html',) 
+        if request.POST.get("form_type") == 'formTwo':
+            return send_ask_message(request)
+        elif request.POST.get("form_type") == 'formOne':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formThree':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formFour':
+            return send_ask_message(request)
+    return render (request, 'privacy_policy.html', {'site_key': settings.RECAPTCHA_PUBLIC_KEY})
 def paid_services(request):
     if request.method == "POST":
-        return send_recall_message(request)
-    return render (request, 'paid_services.html',) 
+        if request.POST.get("form_type") == 'formTwo':
+            return send_ask_message(request)
+        elif request.POST.get("form_type") == 'formOne':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formThree':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formFour':
+            return send_ask_message(request)
+    return render (request, 'paid_services.html', {'site_key': settings.RECAPTCHA_PUBLIC_KEY})
 def consultations(request):
     if request.method == "POST":
-        return send_recall_message(request)
-    return render (request, 'consultations.html',) 
+        if request.POST.get("form_type") == 'formTwo':
+            return send_ask_message(request)
+        elif request.POST.get("form_type") == 'formOne':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formThree':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formFour':
+            return send_ask_message(request)
+    return render (request, 'consultations.html', {'site_key': settings.RECAPTCHA_PUBLIC_KEY})
 def surgery(request):
     if request.method == "POST":
-        return send_recall_message(request)
-    return render (request, 'surgery.html',) 
+        if request.POST.get("form_type") == 'formTwo':
+            return send_ask_message(request)
+        elif request.POST.get("form_type") == 'formOne':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formThree':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formFour':
+            return send_ask_message(request)
+    return render (request, 'surgery.html', {'site_key': settings.RECAPTCHA_PUBLIC_KEY})
 def client_support(request):
     if request.method == "POST":
-        return send_recall_message(request)
-    return render (request, 'client_support.html',) 
+        if request.POST.get("form_type") == 'formTwo':
+            return send_ask_message(request)
+        elif request.POST.get("form_type") == 'formOne':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formThree':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formFour':
+            return send_ask_message(request)
+    return render (request, 'client_support.html', {'site_key': settings.RECAPTCHA_PUBLIC_KEY})
 def hospital_support(request):
     if request.method == "POST":
-        return send_recall_message(request)
-    return render (request, 'hospital_support.html',) 
+        if request.POST.get("form_type") == 'formTwo':
+            return send_ask_message(request)
+        elif request.POST.get("form_type") == 'formOne':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formThree':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formFour':
+            return send_ask_message(request)
+    return render (request, 'hospital_support.html', {'site_key': settings.RECAPTCHA_PUBLIC_KEY})
 def emergency_care(request):
     if request.method == "POST":
-        return send_recall_message(request)
-    return render (request, 'emergency_care.html',) 
+        if request.POST.get("form_type") == 'formTwo':
+            return send_ask_message(request)
+        elif request.POST.get("form_type") == 'formOne':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formThree':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formFour':
+            return send_ask_message(request)
+    return render (request, 'emergency_care.html', {'site_key': settings.RECAPTCHA_PUBLIC_KEY})
 def non_resident_clients(request):
     if request.method == "POST":
-        return send_recall_message(request)
-    return render (request, 'non-resident_clients.html',) 
+        if request.POST.get("form_type") == 'formTwo':
+            return send_ask_message(request)
+        elif request.POST.get("form_type") == 'formOne':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formThree':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formFour':
+            return send_ask_message(request)
+    return render (request, 'non-resident_clients.html', {'site_key': settings.RECAPTCHA_PUBLIC_KEY})

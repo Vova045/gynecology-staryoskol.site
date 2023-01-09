@@ -23,7 +23,6 @@ document.querySelector('#recall_close').addEventListener('click', function () {
 })
 if (document.querySelectorAll('.data_sent_content')[0]) {
     document.querySelectorAll('.data_sent_close')[0].addEventListener('click', function () {
-        console.log("кнопка нажата")
         document.querySelectorAll('.data_sent_content')[0].style.display = 'none';
     })
 }
@@ -215,3 +214,5 @@ document.querySelector('#paid_services_mini_button').addEventListener('click', f
     another_clients_mini.style.display = 'none';
     paid_services_mini.style.display = 'flex';
 })
+
+// обязательное поле для капчи

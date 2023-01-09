@@ -85,7 +85,7 @@
                   <h1>Задать вопрос</h1>
                   <p>Специалист ответит на ваш вопрос в ближайшее время</p>
               <div class="ask_modal_form column">
-                  <form  class="ask_modal_form" id='ask_modal_form_home2' method="POST" action="{% url 'home' %}" enctype="multipart/form-data">
+                  <form  class="ask_modal_form" id='ask_modal_form_home2' method="POST" action="" enctype="multipart/form-data">
                       {% csrf_token %}
                       <div class="form-group">
                         <input type="hidden" name="form_type" value="formTwo">
@@ -140,8 +140,9 @@
                   <p>Специалист перезвонит Вам и уточнит возможность<br>
                       посетить отделение в ближайшее время</p>
               <div class="recall_form column">
-                  <form  class="recall_form" id='recall_form_home' method="POST" action="{% url 'home' %}" enctype="multipart/form-data">
+                  <form  class="recall_form" id='recall_form_home' method="POST" action="" enctype="multipart/form-data">
                       {% csrf_token %}
+                      <input type="hidden" name="form_type" value="formOne">
                       <div class="form-group">
                           <div class="row window_recall"> 
                               <div class="col-lg-12">
@@ -162,9 +163,6 @@
                           </div>
                       <div class="row window_recall"> 
                           <div class="col-lg-12 window_recall_button">
-                              <!-- <div class="navbar_button pink_button">
-                                  <a href="javascript:{}" onclick="recall_form_send()" id="send_recall_form" form="recall_form_home">Заказать звонок</a>
-                              </div>                        -->
                               <div class="recall_button_submit navbar_button pink_button" style="margin-left: 0px;">
                                   <input type="submit" value="Отправить" form="recall_form_home" class="navbar_button pink_button" name="send_recall_form"/>
                               </div>                       
@@ -182,40 +180,80 @@
               </div>
           </div>
       </div>
+      {% if msg %}
+      <div class="capcha_content" id="capcha_content_msg">
+        <div class="capcha_window">
+            <div class="capcha_button">
+                <form class="capcha_form" id='capcha_form' method="POST" action="" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group g-recaptcha" data-callback="onHuman" name="g-recaptcha" data-sitekey="6LfQ6NwjAAAAAGc9bnlaSxPvEHGx4OLMhsfO5EyV"></div>
+                    <INPUT type="hidden" id="captcha" name="g-recaptcha" form="capcha_form" value="">    
+                    <INPUT type="hidden" id="captcha_msg" name="g-recaptcha_msg" form="capcha_form" value="{{ msg }}">    
+                    <input type="hidden" name="form_type" value="formFour">
+                </form>
+            </div>  
+        </div>
+      </div>
+      {% endif %}
+      {% if rcl_msg %}
+      <div class="capcha_content" id="capcha_content_rcl">
+        <div class="capcha_window">
+            <div class="capcha_button">
+                <form class="capcha_form" id='capcha_form2' method="POST" action="" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group g-recaptcha" data-callback="onHuman" name="g-recaptcha" data-sitekey="6LfQ6NwjAAAAAGc9bnlaSxPvEHGx4OLMhsfO5EyV"></div>
+                    <INPUT type="hidden" id="captcha2" name="g-recaptcha" form="capcha_form2" value="">    
+                    <INPUT type="hidden" id="captcha2" name="g-recaptcha_rcl_msg" form="capcha_form2" value="{{ rcl_msg }}">
+                    <input type="hidden" name="form_type" value="formThree">
+                </form>
+            </div>  
+        </div>
+      </div>
+      {% endif %}
       <footer>
         {% include 'footer.html' %}
       </footer>
     </div>
     
-    <!-- General JS Scripts -->
-    <!-- <script src="{% static '/modules/jquery.min.js' %}"></script> -->
-    <!-- <script src="{% static '/modules/bootstrap/js/bootstrap.min.js' %}"></script>
-    <script src="{% static '/modules/nicescroll/jquery.nicescroll.min.js' %}"></script> -->
-    <!-- <script src="{% static '/modules/moment.min.js' %}"></script> -->
-    <!-- <script src="{% static '/js/stisla.js' %}"></script> -->
-
-    
-    <!-- JS Libraies -->
-    <!-- <script src="{% static '/modules/simple-weather/jquery.simpleWeather.min.js' %}"></script>
-    <script src="{% static '/modules/chart.min.js' %}"></script>
-    <script src="{% static '/modules/jqvmap/dist/jquery.vmap.min.js' %}"></script>
-    <script src="{% static '/modules/jqvmap/dist/maps/jquery.vmap.world.js' %}"></script>
-    <script src="{% static '/modules/chocolat/dist/js/jquery.chocolat.min.js' %}"></script> -->
-  
-    <!-- Page Specific JS File -->
-    <!-- <script src="{% static '/js/page/index-0.js' %}"></script> -->
-    
-    <!-- Template JS File -->
-    <!-- <script src="{% static '/js/scripts.js' %}"></script> -->
     <script src="{% static '/js/custom.js' %}"></script>
     <script src="{% static '/js/modal.js' %}"></script>
-    <!-- <script src="{% static '/js/owl.carousel.min.js' %}"></script> -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
   {% block custom_js %}
   {% endblock custom_js %}
   <script>
+    if (document.querySelectorAll('.data_sent_content')[0]) {
+    document.querySelectorAll('.data_sent_close')[0].addEventListener('click', function () {
+        document.querySelectorAll('.data_sent_content')[0].style.display = 'none';
+    })
+}
   </script>
-
+  <script>
+    //делает капчу обязательной
+    window.onload = function() {
+    var $recaptcha = document.querySelector('#g-recaptcha-response');
+    if($recaptcha) {
+        $recaptcha.setAttribute("required", "required");
+    }
+};
+  </script>
+  <SCRIPT type="text/javascript"> 
+  //передает значение капчи в инпут
+    function onHuman(response) { 
+     if (document.getElementById('capcha_content_msg')){
+        document.getElementById('captcha').value = response; 
+        if (document.getElementById('captcha').value != 0) {
+            document.getElementById('capcha_form').submit();
+      }
+     }
+     if (document.getElementById('capcha_content_rcl')){
+      document.getElementById('captcha2').value = response; 
+      if (document.getElementById('captcha2').value != 0) {
+        document.getElementById('capcha_form2').submit();
+      }
+    }
+    } 
+  </SCRIPT>
 </body>
 </html>
 

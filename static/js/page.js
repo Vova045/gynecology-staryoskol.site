@@ -1,6 +1,5 @@
 // Показ модуля спросить
 const div = document.querySelectorAll('.ask_modal_content')[0];
-console.log('Файл запущен')
 document.querySelector('#ask_button').addEventListener('click', function () {
     div.style.display = 'flex';
 })
@@ -36,3 +35,8 @@ document.querySelectorAll('.recall_close')[0].addEventListener('click', function
     div2.style.display = 'none';
 })
 
+if (document.querySelectorAll('.data_sent_content')[0]) {
+    document.querySelectorAll('.data_sent_close')[0].addEventListener('click', function () {
+        document.querySelectorAll('.data_sent_content')[0].style.display = 'none';
+    })
+}

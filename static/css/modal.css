@@ -151,6 +151,15 @@
 .data_sent_text p{
     font-size: 11px; font-weight: 200; text-align: center; margin: 0; padding: 5px;
 }
+.capcha_content {
+    width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); position: fixed; top: 0; left: 0;
+    display: flex; justify-content: center; align-items: center; border-radius: 4px; z-index: 1000;
+}
+.capcha_window {
+    width: fit-content; height: fit-content; position: relative; display: flex; flex-direction: row;  align-items: center; 
+    background-color: white;border-radius: 10px; border: 2px solid; border-color: #F45F97;
+
+}
 @media (min-width: 769px) and (max-width: 1024px) {
     .window_ask_modal .col-lg-6{
         width: 262px;

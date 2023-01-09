@@ -15,26 +15,26 @@ Including another URLconf
 """
 from django.urls import path
 from gynecology_app import views
-from django.urls import include
+from .decorators import check_recaptcha
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('diagnostics', views.diagnostics, name='diagnostics'),
-    path('for_clients', views.for_clients, name='for_clients'),
-    path('department', views.department, name='department'),
-    path('hospital', views.hospital, name='hospital'),
-    path('contacts', views.contacts, name='contacts'),
-    path('services', views.services, name='services'),
-    path('doctors', views.doctors, name='doctors'),
-    path('questions_and_answers', views.questions_and_answers, name='questions_and_answers'),
-    path('privacy_policy', views.privacy_policy, name='privacy_policy'),
-    path('paid_services', views.paid_services, name='paid_services'),
-    path('consultations', views.consultations, name='consultations'),
-    path('surgery', views.surgery, name='surgery'),
-    path('client_support', views.client_support, name='client_support'),
-    path('hospital_support', views.hospital_support, name='hospital_support'),
-    path('emergency_care', views.emergency_care, name='emergency_care'),
-    path('non-resident_clients', views.non_resident_clients, name='non-resident_clients'),
+    path('', check_recaptcha(views.home), name='home'),
+    path('diagnostics', check_recaptcha(views.diagnostics), name='diagnostics'),
+    path('for_clients', check_recaptcha(views.for_clients), name='for_clients'),
+    path('department', check_recaptcha(views.department), name='department'),
+    path('hospital', check_recaptcha(views.hospital), name='hospital'),
+    path('contacts', check_recaptcha(views.contacts), name='contacts'),
+    path('services', check_recaptcha(views.services), name='services'),
+    path('doctors', check_recaptcha(views.doctors), name='doctors'),
+    path('questions_and_answers', check_recaptcha(views.questions_and_answers), name='questions_and_answers'),
+    path('privacy_policy', check_recaptcha(views.privacy_policy), name='privacy_policy'),
+    path('paid_services', check_recaptcha(views.paid_services), name='paid_services'),
+    path('consultations', check_recaptcha(views.consultations), name='consultations'),
+    path('surgery', check_recaptcha(views.surgery), name='surgery'),
+    path('client_support', check_recaptcha(views.client_support), name='client_support'),
+    path('hospital_support', check_recaptcha(views.hospital_support), name='hospital_support'),
+    path('emergency_care', check_recaptcha(views.emergency_care), name='emergency_care'),
+    path('non-resident_clients', check_recaptcha(views.non_resident_clients), name='non-resident_clients'),
 ]
 
 

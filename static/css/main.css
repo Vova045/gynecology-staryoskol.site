@@ -376,6 +376,15 @@ p.text13px {
 #paid_services_mini {
     display: none;
 }
+#g-recaptcha-response {
+    display: block !important;
+    position: absolute;
+    margin: -78px 0 0 0 !important;
+    width: 302px !important;
+    height: 76px !important;
+    z-index: -999999;
+    opacity: 0;
+}
 
 @media (min-width: 1px) and (max-width: 250px) {
     .main-wrapper {
