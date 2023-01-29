@@ -1,0 +1,26 @@
+{% extends 'services_template.html' %}
+{% load static %}
+{% block custom_css %}
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/main.css' %}">
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/page.css' %}">
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/modal.css' %}">
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/for_clients.css' %}">
+{% endblock custom_css %}
+{% block title %}
+Гистероскопия
+{% endblock title %}
+{% block content2 %}
+<div class="article_fon">
+    <div class="article_window">
+        <div class="article_title">
+            <h1>Гистероскопия</h1>
+        </div>
+        <div class="article_text">
+            <p> Гистероскопия — визуальное исследование полости матки с помощью оптической системы. Выделяют диагностическую, хирургическую и контрольную гистероскопию. Диагностическая гистероскопия — осмотр полости матки. Хирургическая гистероскопия — эндоскопическое внутриматочное оперативное вмешательство с нарушением целостности тканей. Контрольная гистероскопия проводится в целях контроля за эффективностью лечения (хирургического или консервативного).  </p>
+        </div>
+    </div>
+</div>
+{% endblock content2 %}
+
+{% block custom_js2 %}
+{% endblock custom_js2 %}

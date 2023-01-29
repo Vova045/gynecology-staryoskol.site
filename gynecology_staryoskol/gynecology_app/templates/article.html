@@ -5,10 +5,8 @@
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/main.css' %}">
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/page.css' %}">
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/modal.css' %}">
-
 {% endblock custom_css %}
 {% block title %}
-Пациентам
 {% endblock title %}
 {% block content %}
 <div class="wrapper">
@@ -30,9 +28,9 @@
                 <a>Гинекологические услуги</a>
             </div>
         </div>
-        <div class="articles_cards clients_cards row">
+        <div class="articles_cards row">
             <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-                <div class="card">
+                <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="{% static 'png/abort400x267px.png' %}">
                     <div class="card-body">
                       <h5 class="card-title">Аборт и его последствия</h5>
@@ -43,6 +41,8 @@
             </div>
         </div>
     </div>
+    {% block content2 %}
+    {% endblock content2 %}
     <div class="have_question row">
         <p>Если у вас остались вопросы,<br>
             воспользуйтесь нашими услугами
@@ -62,3 +62,42 @@
 {% block custom_js %}
 <script src="{% static '/js/page.js' %}"></script>
 {% endblock custom_js %}
+
+{% block custom_js2 %}
+<script src="{% static '/js/modal.js' %}"></script>
+<script src="{% static '/js/main.js' %}"></script>
+<script src="{% static '/js/page.js' %}"></script>
+<script>
+    if (document.querySelectorAll('.data_sent_content')[0]) {
+    document.querySelectorAll('.data_sent_close')[0].addEventListener('click', function () {
+        document.querySelectorAll('.data_sent_content')[0].style.display = 'none';
+    })
+}
+  </script>
+  <script>
+    //делает капчу обязательной
+    window.onload = function() {
+    var $recaptcha = document.querySelector('#g-recaptcha-response');
+    if($recaptcha) {
+        $recaptcha.setAttribute("required", "required");
+    }
+};
+  </script>
+  <SCRIPT type="text/javascript"> 
+  //передает значение капчи в инпут
+    function onHuman(response) { 
+     if (document.getElementById('capcha_content_msg')){
+        document.getElementById('captcha').value = response; 
+        if (document.getElementById('captcha').value != 0) {
+            document.getElementById('capcha_form').submit();
+      }
+     }
+     if (document.getElementById('capcha_content_rcl')){
+      document.getElementById('captcha2').value = response; 
+      if (document.getElementById('captcha2').value != 0) {
+        document.getElementById('capcha_form2').submit();
+      }
+    }
+    } 
+  </SCRIPT>
+  {% endblock custom_js2 %}

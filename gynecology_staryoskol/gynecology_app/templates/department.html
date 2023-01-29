@@ -5,6 +5,7 @@
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/main.css' %}">
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/page.css' %}">
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/modal.css' %}">
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/for_clients.css' %}">
 
 {% endblock custom_css %}
 {% block title %}
@@ -12,6 +13,20 @@
 {% endblock title %}
 {% block content %}
 <div class="wrapper">
+    <div class="article_fon">
+        <div class="article_window">
+            <div class="article_title">
+                <h1>Об отделении</h1>
+            </div>
+            <div class="article_text">
+                <p>Отделение гинекологии в составе многопрофильной больницы с широкими возможностями обследования и лечения пациентов. Консервативное и оперативное лечение гинекологических больных, а также патологии беременности.</p>
+                <br>
+                <p>Вы можете ознакомиться со списком услуг, предоставляемых в нашем отделении, нажав <a href="{% url 'services' %}">здесь</a> </p>
+                <br>
+                <p>Наше отделение оснащено современным медицинским оборудованием отвечающее всем стандартам. Мы предоставляем восстановительный период для пациентов за счет качественного наркоза, а также необходимой для этого квалифицированной медицинской помощи. А персонал стационара быстро поставит пациентов на ноги после операции.</p>
+             </div>
+        </div>
+    </div>
     <div class="have_question row">
         <p>Если у вас остались вопросы,<br>
             воспользуйтесь нашими услугами

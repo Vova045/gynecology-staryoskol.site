@@ -5,6 +5,7 @@
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/main.css' %}">
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/page.css' %}">
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/modal.css' %}">
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/for_clients.css' %}">
 
 {% endblock custom_css %}
 {% block title %}
@@ -12,6 +13,23 @@
 {% endblock title %}
 {% block content %}
 <div class="wrapper">
+    <div class="article_fon">
+        <div class="article_window">
+            <div class="article_title">
+                <h1>Адрес</h1>
+            </div>
+            <div class="article_text">
+                <p style="text-indent:initial; margin-bottom: 30px;">ОГБУЗ «Старооскольская окружная больница Святителя Луки Крымского»<br><br>
+
+                    309500, Белгородская область, г. Старый Оскол, ул. Ублинские горы, д. 1а<br>
+                </p>
+                <p style="text-indent:initial; margin-bottom: 30px;">Телефонный номер: + 7 (4725) 41-49-92</p>
+                <div class="yandex_map">
+                    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab7fa48c22a72ba3d586f2b9ec489a5fb4c9398045d6301571dc4181a0022d2f0&amp;width=100%&amp;height=360&amp;lang=ru_RU&amp;scroll=true"></script>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="have_question row">
         <p>Если у вас остались вопросы,<br>
             воспользуйтесь нашими услугами

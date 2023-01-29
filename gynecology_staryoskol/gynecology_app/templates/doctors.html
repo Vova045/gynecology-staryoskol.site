@@ -5,6 +5,8 @@
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/main.css' %}">
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/page.css' %}">
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/modal.css' %}">
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/for_clients.css' %}">
+
 
 {% endblock custom_css %}
 {% block title %}
@@ -12,6 +14,103 @@
 {% endblock title %}
 {% block content %}
 <div class="wrapper">
+    <div class="article_fon">
+        <div class="article_window">
+            <div class="article_title">
+                <h1>Наши врачи</h1>
+            </div>
+            <div class="article_text">
+                <p>
+                    Мы собрали опытную команду врачей с современным подходом к гинекологии, которые в своей работе опираются исключительно
+                    на стандарты доказательной медицины. Работая на самом современном оборудовании, наши гинекологи проведут полную диагностику
+                    и при необходимости назначат оптимальное лечение.<br><br>
+                </p>
+             </div>
+        </div>
+    </div>
+    <div class="articles_cards doctors_cards" style="display:flex">
+        <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'png/sokolova222px.png' %}">
+                <div class="card-body">
+                  <h5 class="card-title">Соколова Валентина Николаевна</h5>
+                  <p class="card-text">Заведующая отделением</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'png/frolov222px.png' %}">
+                <div class="card-body">
+                  <h5 class="card-title">Фролов Сергей Николаевич</h5>
+                  <p class="card-text">Врач-терапевт</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'png/klueva222px.png' %}">
+                <div class="card-body">
+                  <h5 class="card-title">Клюева Ирина Львовна</h5>
+                  <p class="card-text">Врач-терапевт</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'png/lobkova222px.png' %}">
+                <div class="card-body">
+                  <h5 class="card-title">Лобкова Ольга Николаевна</h5>
+                  <p class="card-text">Врач-рентгенолог</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'png/manukyan222px.png' %}">
+                <div class="card-body">
+                  <h5 class="card-title">Манукян Галина Александровна</h5>
+                  <p class="card-text">Врач-педиатр</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'png/pisarev222px.png' %}">
+                <div class="card-body">
+                  <h5 class="card-title">Писарев Николай Михайлович</h5>
+                  <p class="card-text">Врач-педиатр</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'png/ivanova222px.png' %}">
+                <div class="card-body">
+                  <h5 class="card-title">Иванова Мария Петровна</h5>
+                  <p class="card-text">Врач-педиатр</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'png/kurbatov222px.png' %}">
+                <div class="card-body">
+                  <h5 class="card-title">Курбатов Дмитрий Сергеевич</h5>
+                  <p class="card-text">Врач акушер-гинекоолог</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'png/mishurova222px.png' %}">
+                <div class="card-body">
+                  <h5 class="card-title">Мишурова Анна Юрьевна</h5>
+                  <p class="card-text">Врач акушер-гинекоолог</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="have_question row">
         <p>Если у вас остались вопросы,<br>
             воспользуйтесь нашими услугами

@@ -35,6 +35,12 @@ urlpatterns = [
     path('hospital_support', check_recaptcha(views.hospital_support), name='hospital_support'),
     path('emergency_care', check_recaptcha(views.emergency_care), name='emergency_care'),
     path('non-resident_clients', check_recaptcha(views.non_resident_clients), name='non-resident_clients'),
+
+    path('articles/abort',check_recaptcha(views.abort), name='abort'),
+
+    path('services/hysteroscopy',check_recaptcha(views.hysteroscopy), name='hysteroscopy'),
+    path('services/laparoscopy',check_recaptcha(views.laparoscopy), name='laparoscopy'),
+
 ]
 
 

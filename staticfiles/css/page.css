@@ -1,0 +1,600 @@
+.wrapper {
+    width: 100%;
+}
+.navbar-fon {
+    width: 100%; height: fit-content;
+    left: 0; right: 0; margin: auto;
+    display: flex;
+    justify-content: start;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    z-index: 999;
+    filter: drop-shadow(0px 2px 30px rgba(0, 0, 0, 0.05));
+}
+.articles {
+    width: 1440px; margin-left: auto; margin-right: auto; z-index: 1; margin-bottom: 30px;
+}
+.articles_title h1{
+    font-size: 24px; font-weight: 600; margin-bottom: 0px;
+}
+.articles_title{
+    padding-left: 230px; padding-top: 40px; padding-right: 230px; padding-bottom: 20px; 
+}
+.articles_types{
+    width: 1000px; margin: 0 auto; margin-bottom: 30px;
+}
+.articles_types .pink_border_button {
+    margin-right: 10px; margin-bottom: 10px;
+}
+.articles_cards{
+    display: flex; padding-top: 0px; padding-bottom: 20px;
+    width: 1000px; margin: 0 auto; flex-wrap: wrap;
+}
+.doctors_cards{
+    margin-top: -30px;
+}
+.card {
+    margin: 5px;
+}
+.card p{
+    font-size: 12px;
+}
+.banner_page {
+    display: flex; flex-direction: column; 
+    height: 400px; width: 1100px; margin-left: auto; margin-right: auto;
+    justify-content: center; margin-bottom: 50px;
+}
+
+.banner_page_img {
+    width: 100%; height: fit-content; object-fit: contain; position: relative; z-index: -1; margin: auto; top: 0; left: 0; right: 0;
+}
+
+.banner_text_div {
+    position: absolute; width: 550px; height: fit-content;
+    background: rgba(0, 187, 255, 0.6); margin-left: 0; padding-left: 50px; color: white; padding-top: 30px; padding-bottom: 30px;
+}
+.banner_button_div {
+    margin-left: 0px;
+}
+.banner_button_div .pink_noborder_button{
+    margin-right: 20px;
+}
+.text_page {
+    display: flex; flex-direction: row; justify-content: center;
+}
+.text_page_only_text {
+    display: flex; width: 900px; height: fit-content;  flex-wrap: wrap;text-align: justify;
+    text-justify: inter-word;
+}
+.text_page_only_text p{
+    font-size: 12px; 
+}
+.text_page_with_img{
+    display: flex; width: 900px; height: fit-content; flex-wrap: nowrap; padding-bottom: 25px;
+}
+.text_page_text{
+    display: flex; width: 400px; height: fit-content; flex-wrap: wrap;
+    text-justify: inter-word;
+}
+.text_page_text p{
+    font-size: 12px; 
+}
+.text_page_img {
+    width: 400px; height: auto; border-radius: 25px;
+}
+.have_question {
+    display: flex; flex-direction: row; justify-content: center; width: 100%; height: fit-content;
+    margin-left: auto; margin-right: auto; text-align: center; padding-top: 50px; padding-bottom: 50px;
+}
+.have_question p{
+    font-size: 20px; font-weight: 300;
+}
+.have_question .banner_button_div{
+    justify-content: center;
+}
+.have_question .banner_button_div .pink_noborder_button{
+    color: white; background-color: #FF5C8B; border-color: #FF5C8B;
+}
+.have_question .banner_button_div .white_border_button{
+    color: #FF5C8B; background-color: white; border-color: #FF5C8B;
+}
+.have_question .banner_button_div .white_border_button:hover{
+    color: white; background-color: #00CCFF; border-color: #00CCFF;
+}
+.white_button:hover {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border: 1px solid; border-color: black;
+}
+.dropdown-menu-right {
+    border:1px solid black;
+}
+
+.pink_border_button {
+    border: 1px solid #FF5C8B;
+}
+
+.gynecology_services {
+    display: flex; flex-direction: row; width: 100%; height: fit-content; background-color: #FFF5F8;
+    justify-content: center; align-items: center; padding-top: 30px; padding-bottom: 30px;
+}
+.title_services {
+    display: flex; flex-direction: row; width: 200px; height: 100%; justify-content: center; align-items: center;
+}
+.center_services {
+    display: flex; flex-direction: row; width: 1000px; height: 100%; justify-content: space-around;
+}
+.center_services a{
+    padding-top: 8px; padding-bottom: 8px;
+}
+.right_services {
+    display: flex; flex-direction: row; width: 200px; height: 100%;
+}
+.leftcenter_services {
+    display: flex; height: 100%; width: 400px; 
+    flex-direction: column; justify-content: center; 
+}
+.leftcenter_services a{
+    cursor: pointer;
+}
+.leftcenter_services.white a:hover{
+    color: #FF5C8B;
+}
+
+.rightcenter_services.white a:hover{
+    color: #FF5C8B;
+}
+.rightcenter_services.pink a:hover{
+    font-weight: 600; color: white;
+}
+.leftcenter_services.pink a:hover{
+    font-weight: 600; color: white;
+}
+.leftcenter_services.pink a{
+    color: white;
+}
+.rightcenter_services.pink a{
+    color: white;
+}
+.rightcenter_services {
+    display: flex; height: 100%; width: 400px; 
+    flex-direction: column; justify-content: center; 
+}
+.title_services h1 {
+    font-size: 36px; font-weight: 200;transform: rotate(270deg); padding-left: 10px; padding-right: 10px;
+    cursor: default;color: #FF5C8B;
+}
+.gynecology_services.pink {
+    background-color: #FF5C8B; color: white;
+}
+.gynecology_services.pink h1{
+    color: white;
+}
+.gynecology_services.diagnostic{
+    height: 350px;
+}
+.gynecology_services.soprovogdenie{
+    background-color: white; height: 450px;
+}
+.leftcenter_services.soprovogdenie{
+    width: 1000px; margin-left: 20px; font-size: 20px;
+}
+.leftcenter_services.soprovogdenie a{
+    cursor: default;
+}
+.leftcenter_services.soprovogdenie a:hover{
+    color: black;
+}
+.leftcenter_services.soprovogdenie.pink a{
+    color: white; cursor: default;
+}
+.leftcenter_services.soprovogdenie.pink a:hover{
+    color: white; font-weight: 400;
+}
+.gynecology_services.inogoroda {
+    background-color: #E6E6E6;
+}
+.gynecology_services.inogoroda h1{
+    color: black;
+}
+.hospital_services {
+    display: flex; flex-direction: row; width: 100%; height: fit-content; background-color: #FFF5F8;
+    justify-content: center; align-items: center; padding-top: 30px; padding-bottom: 30px;
+}
+.clients_cards .card {
+    width: 18rem;
+}
+
+@media (min-width: 251px) and (max-width: 319px) {
+    .gynecology_services.diagnostic{
+        height: 270px;
+    }
+    .gynecology_services {
+        display: flex; flex-direction: row; width: auto; height: fit-content; background-color: #FFF5F8;
+        justify-content: left; align-items: center; padding-top: 15px; padding-bottom: 15px;
+    }
+    .title_services {
+        width: 100px;
+    }
+    .title_services h1{
+        font-size: 25px;
+    }
+    .hospital_services .center_services{
+        flex-direction: column; padding-left: 20px; padding-right: 20px;
+    }
+    .hospital_services .title_services{
+        width: 0px;
+    }
+    .leftcenter_services {
+        display: flex; height: 100%; width: auto;
+        flex-direction: column; justify-content: center; padding-right: 10px; 
+        word-break: normal; overflow: hidden;
+    }
+    .rightcenter_services {
+        display: flex; height: 100%; width: auto;
+        flex-direction: column; justify-content: center; padding-right: 10px; 
+    }
+    .right_services {
+        width: 5px;
+    }
+    .leftcenter_services.soprovogdenie{
+        width: auto; margin-left: 0px; font-size: 10px; word-break: normal;
+    }
+    .gynecology_services.soprovogdenie{
+        background-color: white; height: 420px;
+    }
+    .gynecology_services.stationary{
+        background-color: white; height: 380px;
+    }
+    .gynecology_services.stationary p{
+        font-size: 10px;
+    }
+    .center_services {
+        display: flex; width: auto; flex-direction: column; height: fit-content; justify-content: space-around;
+    }
+    .center_services a{
+        font-size: 10px;
+    }
+    .gynecology_services.inogoroda {
+        background-color: #E6E6E6; height: 370px;
+    }
+    .banner_page {
+        display: flex; flex-direction: column; 
+        height: 400px; width: 240px; margin-left: auto; margin-right: auto;
+        justify-content: center; margin-bottom: 50px;
+    }
+    .articles_cards{
+        display: flex; padding-top: 0px; padding-bottom: 20px;
+        width: 240px; margin: 0 auto; flex-wrap: wrap;
+    }
+    .articles_title{
+        padding-left: 10px; padding-top: 20px; padding-right: 10px; padding-bottom: 20px; 
+    }
+    .articles_types{
+        width: 240px; margin: 0 auto; margin-bottom: 10px; margin-left: 10px;
+    }
+    .articles_title h1{
+        font-size: 20px;
+    }
+    .articles_types .pink_border_button a{
+        padding: 3px; padding-left: 5px; padding-right: 5px;
+    }
+    .articles {
+        width: 240px; margin-left: auto; margin-right: auto; z-index: 1; margin-bottom: 0px;
+    }
+    .yandex_map{
+        width: 220px;
+    }
+    .have_question {
+        display: flex; flex-direction: row; justify-content: center; width: 100%; height: fit-content;
+        margin-left: auto; margin-right: auto; text-align: center; padding-top: 30px; padding-bottom: 30px;
+    }
+    .have_question p{
+        font-size: 15px;
+    }
+    .have_question .banner_button_div{
+        justify-content: center; margin: auto 0;
+    }
+    .have_question .banner_button_div .pink_noborder_button a{
+        font-size: 7px; padding: 5px;
+    }
+    .have_question .banner_button_div .white_border_button a{
+        font-size: 7px; padding: 5px;
+    }
+    .clients_cards .card {
+        width: 200px;
+    }
+    .doctors_cards h5{
+        font-size: 10px;
+    }
+    .doctors_cards p{
+        font-size: 8px;
+    }
+}
+@media (min-width: 320px) and (max-width: 540px) {
+    .gynecology_services.diagnostic{
+        height: 270px;
+    }
+    .gynecology_services {
+        display: flex; flex-direction: row; width: auto; height: fit-content; background-color: #FFF5F8;
+        justify-content: left; align-items: center; padding-top: 15px; padding-bottom: 15px;
+    }
+    .title_services {
+        width: 100px;
+    }
+    .title_services h1{
+        font-size: 25px;
+    }
+    .hospital_services .center_services{
+        flex-direction: column; padding-left: 20px; padding-right: 20px;
+    }
+    .hospital_services .title_services{
+        width: 0px;
+    }
+    .leftcenter_services {
+        display: flex; height: 100%; width: auto;
+        flex-direction: column; justify-content: center; padding-right: 10px; 
+        word-break: normal; overflow: hidden;
+    }
+    .rightcenter_services {
+        display: flex; height: 100%; width: auto;
+        flex-direction: column; justify-content: center; padding-right: 10px; 
+    }
+    .right_services {
+        width: 5px;
+    }
+    .leftcenter_services.soprovogdenie{
+        width: auto; margin-left: 0px; font-size: 10px; word-break: normal;
+    }
+    .gynecology_services.soprovogdenie{
+        background-color: white; height: 325px;
+    }
+    .gynecology_services.stationary{
+        background-color: white; height: 260px;
+    }
+    .gynecology_services.stationary p{
+        font-size: 10px;
+    }
+    .center_services {
+        display: flex; width: auto; flex-direction: column; height: fit-content; justify-content: space-around;
+    }
+    .center_services a{
+        font-size: 10px;
+    }
+    .gynecology_services.inogoroda {
+        background-color: #E6E6E6; height: 280px;
+    }
+    .banner_page {
+        display: flex; flex-direction: column; 
+        height: 400px; width: 310px; margin-left: auto; margin-right: auto;
+        justify-content: center; margin-bottom: 50px;
+    }
+    .articles_cards{
+        display: flex; padding-top: 0px; padding-bottom: 20px;
+        width: 310px; margin: 0 auto; flex-wrap: wrap;
+    }
+    .articles_title{
+        padding-left: 10px; padding-top: 20px; padding-right: 10px; padding-bottom: 20px; 
+    }
+    .articles_types{
+        width: 310px; margin: 0 auto; margin-bottom: 10px; margin-left: 10px;
+    }
+    .articles_title h1{
+        font-size: 20px;
+    }
+    .articles_types .pink_border_button a{
+        padding: 3px; padding-left: 5px; padding-right: 5px;
+    }
+    .articles {
+        width: 310px; margin-left: auto; margin-right: auto; z-index: 1; margin-bottom: 0px;
+    }
+    .yandex_map{
+        width: 290px;
+    }
+    .have_question {
+        display: flex; flex-direction: row; justify-content: center; width: 100%; height: fit-content;
+        margin-left: auto; margin-right: auto; text-align: center; padding-top: 30px; padding-bottom: 30px;
+    }
+    .have_question p{
+        font-size: 15px;
+    }
+    .have_question .banner_button_div{
+        justify-content: center; margin: auto 0;
+    }
+    .have_question .banner_button_div .pink_noborder_button a{
+        font-size: 7px; padding: 5px;
+    }
+    .have_question .banner_button_div .white_border_button a{
+        font-size: 7px; padding: 5px;
+    }
+    .clients_cards .card {
+        width: 200px;
+    }
+    .doctors_cards h5{
+        font-size: 10px;
+    }
+    .doctors_cards p{
+        font-size: 8px;
+    }
+}
+@media (min-width: 541px) and (max-width: 768px) {
+    .gynecology_services {
+        display: flex; flex-direction: row; width: auto; height: fit-content; background-color: #FFF5F8;
+        justify-content: left; align-items: center; padding-top: 15px; padding-bottom: 15px;
+    }
+    .title_services {
+        width: 140px;
+    }
+    .hospital_services .center_services{
+        flex-direction: row; padding-left: 20px; padding-right: 20px;
+    }
+    .hospital_services .title_services{
+        width: 0px;
+    }
+    .leftcenter_services {
+        display: flex; height: 100%; width: auto;
+        flex-direction: column; justify-content: center; padding-right: 10px; 
+        word-break: normal; overflow: hidden;
+    }
+    .rightcenter_services {
+        display: flex; height: 100%; width: auto;
+        flex-direction: column; justify-content: center; padding-right: 10px; 
+    }
+    .right_services {
+        width: 5px;
+    }
+    .leftcenter_services.soprovogdenie{
+        width: auto; margin-left: 0px; font-size: 20px; word-break: normal;
+    }
+    .gynecology_services.soprovogdenie{
+        background-color: white; height: 600px;
+    }
+    .gynecology_services.stationary{
+        background-color: white; height: 400px;
+    }
+    .center_services {
+        display: flex; width: auto; flex-direction: column; height: fit-content; justify-content: space-around;
+    }
+    .gynecology_services.inogoroda {
+        background-color: #E6E6E6; height: 500px;
+    }
+    .banner_page {
+        display: flex; flex-direction: column; 
+        height: 400px; width: 500px; margin-left: auto; margin-right: auto;
+        justify-content: center; margin-bottom: 50px;
+    }
+    .articles_cards{
+        display: flex; padding-top: 0px; padding-bottom: 20px;
+        width: 500px; margin: 0 auto; flex-wrap: wrap;
+    }
+    .articles_title{
+        padding-left: 50px; padding-top: 40px; padding-right: 50px; padding-bottom: 20px; 
+    }
+    .articles_types{
+        width: 500px; margin: 0 auto; margin-bottom: 30px;
+    }
+    .articles {
+        width: 500px; margin-left: auto; margin-right: auto; z-index: 1; margin-bottom: 0px;
+    }
+    .yandex_map{
+        width: 460px;
+    }
+    .clients_cards .card {
+        width: 200px;
+    }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    .gynecology_services {
+        display: flex; flex-direction: row; width: 100%; height: fit-content; background-color: #FFF5F8;
+        justify-content: center; align-items: center; padding-top: 15px; padding-bottom: 15px;
+    }
+    .leftcenter_services {
+        display: flex; height: 100%; width: 300px; 
+        flex-direction: column; justify-content: center; padding-right: 20px;
+    }
+    .rightcenter_services {
+        display: flex; height: 100%; width: 300px;
+        flex-direction: column; justify-content: center; padding-right: 20px;
+    }
+    .leftcenter_services.soprovogdenie{
+        width: 1400px; margin-left: 20px; font-size: 20px;
+    }
+    .leftcenter_services.stationary{
+        width: 1400px; margin-left: 20px; font-size: 20px;
+    }
+    .gynecology_services.soprovogdenie{
+        background-color: white; height: 550px;
+    }
+    .gynecology_services.stationary{
+        background-color: white; height: 470px;
+    }
+    .center_services {
+        display: flex; flex-direction: row; width: 600px; height: fit-content; justify-content: space-around;
+    }
+    .gynecology_services.inogoroda {
+        background-color: #E6E6E6; height: 450px;
+    }
+    .banner_page {
+        display: flex; flex-direction: column; 
+        height: 400px; width: 700px; margin-left: auto; margin-right: auto;
+        justify-content: center; margin-bottom: 50px;
+    }
+    .articles_cards{
+        display: flex; padding-top: 0px; padding-bottom: 20px;
+        width: 700px; margin: 0 auto; flex-wrap: wrap;
+    }
+    .articles_title{
+        padding-left: 50px; padding-top: 40px; padding-right: 50px; padding-bottom: 20px; 
+    }
+    .articles_types{
+        width: 760px; margin: 0 auto; margin-bottom: 30px;
+    }
+    .articles {
+        width: 750px; margin-left: auto; margin-right: auto; z-index: 1; margin-bottom: 0px;
+    }
+    .yandex_map{
+        width: 700px;
+    }
+    .clients_cards .card {
+        width: 200px;
+    }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .leftcenter_services.soprovogdenie{
+        width: 800px; margin-left: 20px; font-size: 20px;
+    }
+    .center_services {
+        display: flex; flex-direction: row; width: 800px; height: 100%; justify-content: space-around;
+    }
+    .banner_page {
+        display: flex; flex-direction: column; 
+        height: 400px; width: 800px; margin-left: auto; margin-right: auto;
+        justify-content: center; margin-bottom: 50px;
+    }
+    .articles_cards{
+        display: flex; padding-top: 0px; padding-bottom: 20px;
+        width: 800px; margin: 0 auto; flex-wrap: wrap;
+    }
+    .articles_title{
+        padding-left: 150px; padding-top: 40px; padding-right: 150px; padding-bottom: 20px; 
+    }
+    .articles_types{
+        width: 800px; margin: 0 auto; margin-bottom: 30px;
+    }
+    .articles {
+        width: 1024px; margin-left: auto; margin-right: auto; z-index: 1; margin-bottom: 0px;
+    }
+    .yandex_map{
+        width: 900px;
+    }
+}
+@media (min-width: 1441px) {
+    .leftcenter_services.soprovogdenie{
+        width: 1000px; margin-left: 20px; font-size: 20px;
+    }
+    .leftcenter_services.stationary{
+        width: 1000px; margin-left: 20px; font-size: 20px;
+    }
+    .yandex_map{
+        width: 1100px;
+    }
+    .banner_page {
+        display: flex; flex-direction: column; 
+        height: 400px; width: 1100px; margin-left: auto; margin-right: auto;
+        justify-content: center; margin-bottom: 50px;
+    }
+    .articles_cards{
+        display: flex; padding-top: 0px; padding-bottom: 20px;
+        width: 1000px; margin: 0 auto; flex-wrap: wrap;
+    }
+    .articles_title{
+        padding-left: 230px; padding-top: 40px; padding-right: 230px; padding-bottom: 20px; 
+    }
+    .articles_types{
+        width: 1000px; margin: 0 auto; margin-bottom: 30px;
+    }
+    .articles {
+        width: 1440px; margin-left: auto; margin-right: auto; z-index: 1; margin-bottom: 30px;
+    }
+}

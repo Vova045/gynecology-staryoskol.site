@@ -9,8 +9,8 @@
     <div>
         <a href="http://sob.belzdrav.ru">
             <div class="navbar_text hospital_text">
-                <p style="font-weight: 200;">Старооскольcкая окружная больница</p>
-                <p style="font-weight: 500;">Светителя Луки Крымского</p>
+                <p class="nav_hospital">Старооскольcкая окружная больница</p>
+                <p class="nav_hospital2">Светителя Луки Крымского</p>
             </div>
         </a>
     </div>
@@ -18,11 +18,11 @@
     <div class="navbar_with_svg">
         <img class="img_nav" src="{% static 'png/phone.png' %}">
         <div class="navbar_text">
-            <a href="tel:+74725123456">
-                <p style="font-weight: 200; cursor: pointer;">+ 7 (4725) 12-34-56</p>
+            <a href="tel:+74725414992">
+                <p class="nav_phone">+ 7 (4725) 41-49-92</p>
             </a>
-            <a href="tel:+79012345678">
-                <p style="cursor: pointer;">+ 7 (901) 234-56-78</p>
+            <a>
+                <p style="cursor: default;"></p>
             </a>
         </div>
     </div>
@@ -43,41 +43,72 @@
         </div>
     </div>
 </div>
-<div class="navbar_otd">
-    <div class="navbar_with_svg">
-        <a href="{% url 'home' %}">
-            <img class="img_nav" src="{% static 'png/logo.png' %}">
-        </a>
-        <a href="{% url 'home' %}">
-            <div class="navbar_text">
-                <p class="logo_text_small" style="font-weight: 300;">Отделение</p>
-                <p class="logo_text_big" style="font-weight: 600;">Гинекологии</p>
+<div class="navbar-fon">
+    <div class="navbar_otd">
+        <div class="navbar_with_svg">
+            <a href="{% url 'home' %}">
+                <img class="img_nav" src="{% static 'png/logo.png' %}">
+            </a>
+            <a href="{% url 'home' %}">
+                <div class="navbar_text">
+                    <p class="logo_text_small" style="font-weight: 300;">Отделение</p>
+                    <p class="logo_text_big" style="font-weight: 600;">Гинекологии</p>
+                </div>
+            </a>
+        </div>
+        <div class="navbar_button white_button">
+            <a href="{% url 'for_clients' %}">Пациентам</a>
+        </div>
+        <div class="navbar_button white_button">
+            <a href="{% url 'department' %}">Об отделении</a>
+        </div>
+        <div class="navbar_button white_button">
+            <a href="{% url 'hospital' %}">О больнице</a>
+        </div>
+        <div class="navbar_button white_button">
+            <a href="{% url 'contacts' %}">Контакты</a>
+        </div>
+        <div class="btn-group navbar_button white_button">
+            <a href="{% url 'services' %}" style="padding-right: 0;">Услуги</a>
+            <button type="button" class="btn dropdown-toggle navbar_toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+                <div class="navbar_button white_button2">
+                    <a href="{% url 'services' %}#gynecology_services_button">Гинекологические услуги</a>
+                </div>
+                <div class="navbar_button white_button2">
+                    <a href="{% url 'services' %}#gynecology_operation_button">Гинекологические операции</a>
+                </div>
+                <div class="navbar_button white_button2">
+                    <a href="{% url 'services' %}#diagnostica_button">Диагностика</a>
+                </div>
+                <div class="navbar_button white_button2">
+                    <a href="{% url 'services' %}#consultation_button">Консультации</a>
+                </div>
+                <div class="navbar_button white_button2">
+                    <a href="{% url 'services' %}#soprovogdenie_button">Сопровождение клиента</a>
+                </div>
+                <div class="navbar_button white_button2">
+                    <a href="{% url 'services' %}#stationary_button">Услуги стационара</a>
+                </div>
+                <div class="navbar_button white_button2">
+                    <a href="{% url 'services' %}#very_help_button">Экстренная помощь</a>
+                </div>
+                <div class="navbar_button white_button2">
+                    <a href="{% url 'services' %}#foreign_button">Для иногородних</a>
+                </div>
             </div>
-        </a>
-    </div>
-    <div class="navbar_button white_button">
-        <a href="{% url 'diagnostics' %}">Диагностика</a>
-    </div>
-    <div class="navbar_button white_button">
-        <a href="{% url 'for_clients' %}">Пациентам</a>
-    </div>
-    <div class="navbar_button white_button">
-        <a href="{% url 'department' %}">Об отделении</a>
-    </div>
-    <div class="navbar_button white_button">
-        <a href="{% url 'hospital' %}">О больнице</a>
-    </div>
-    <div class="navbar_button white_button">
-        <a href="{% url 'contacts' %}">Контакты</a>
-    </div>
-    <div class="navbar_button white_button">
-        <a href="{% url 'services' %}">Услуги</a>
-    </div>
-    <div class="navbar_button white_button">
-        <a href="{% url 'doctors' %}">Врачи</a>
-    </div>
-    <div class="navbar_button pink_button recall_button" id="recall_button">
-        <a>Записаться к врачу</a>
+          </div>
+        <div class="navbar_button white_button">
+            <a href="{% url 'doctors' %}">Врачи</a>
+        </div>
+        <div class="navbar_button pink_button recall_button" id="recall_button">
+            <a>Записаться к врачу</a>
+        </div>
     </div>
 </div>
 {% endblock %}
+{% block custom_js %}
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+{% endblock custom_js %}

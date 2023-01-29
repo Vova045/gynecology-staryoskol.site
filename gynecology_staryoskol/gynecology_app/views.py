@@ -1,24 +1,18 @@
 from django.shortcuts import render, redirect
 from django.core.mail import EmailMultiAlternatives
 from django.conf import settings
-from django.http import HttpResponseRedirect
 from django.urls import resolve
-   
 
 def send_recall_message(request):
     if request.method == 'POST':
         if request.POST.get("form_type") == 'formOne':
             telephone = request.POST.get('recall_phone')
-            time = request.POST.get('recall_time')
-            check = request.POST.get('recall_time_check')
             recall_time_check=f"Нужно перезвонить в ближайшее время"
-            recall_time=f"Нужно перезвонить в {time}."
-            if check != None:
-                need_msg = recall_time_check
-            else:
-                need_msg = recall_time
+            need_msg = recall_time_check
             rcl_msg=(f"<p>Поступила заявка на звонок от {telephone}.{need_msg}</p>")
-            return render(request,str(resolve(request.path_info).url_name)+'.html', {'rcl_msg': rcl_msg, 'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
+            if str(request.get_full_path()[1:]) == '':
+                return render(request,str(resolve(request.path_info).url_name)+'.html', {'rcl_msg': rcl_msg, 'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
+            return render(request,str(request.get_full_path()[1:])+'.html', {'rcl_msg': rcl_msg, 'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
         if request.POST.get("form_type") == 'formThree':
             subject='Заявка на звонок'
             form_email = settings.EMAIL_HOST_USER
@@ -29,10 +23,13 @@ def send_recall_message(request):
             rcl_msg.content_subtype='html'
             if request.recaptcha_is_valid:
                 rcl_msg.send()
-                return render(request,str(resolve(request.path_info).url_name)+'.html', {'telephone': telephone,'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
+                if str(request.get_full_path()[1:]) == '':
+                    return render(request,str(resolve(request.path_info).url_name)+'.html', {'telephone': telephone,'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
+                return render(request,str(request.get_full_path()[1:])+'.html', {'telephone': telephone,'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
     else:
-        return render (request, str(resolve(request.path_info).url_name)+'.html',) 
-
+        if str(request.get_full_path()[1:]) == '':
+            return render (request, str(resolve(request.path_info).url_name)+'.html',) 
+        return render(request,str(request.get_full_path()[1:])+'.html')
 def send_ask_message(request):
     if request.method == 'POST':
         if request.POST.get("form_type") == 'formTwo':
@@ -43,7 +40,9 @@ def send_ask_message(request):
             phone = request.POST.get('ask_modal_phone')
             message = request.POST.get('ask_modal_message')
             msg=(f"<p>Поступила новый вопрос на сайте от {lastname}{firstname}.Текст такой:{message}.<br> Электронная почта:{mail},Телефонный номер:{phone}</p>")
-            return render(request,str(resolve(request.path_info).url_name)+'.html', {'msg': msg, 'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
+            if str(request.get_full_path()[1:]) == '':
+                return render(request,str(resolve(request.path_info).url_name)+'.html', {'msg': msg, 'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
+            return render(request,str(request.get_full_path()[1:])+'.html', {'msg': msg, 'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
         if request.POST.get("form_type") == 'formFour':
             msg = request.POST.get('g-recaptcha_msg')
             subject='Новый вопрос'
@@ -54,9 +53,13 @@ def send_ask_message(request):
             msg.content_subtype='html'
             if request.recaptcha_is_valid:
                 msg.send()
-                return render(request,str(resolve(request.path_info).url_name)+'.html', {'mail': mail, 'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
+                if str(request.get_full_path()[1:]) == '':
+                    return render(request,str(resolve(request.path_info).url_name)+'.html', {'mail': mail, 'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
+                return render(request,str(request.get_full_path()[1:])+'.html', {'mail': mail, 'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
     else:
-        return render (request, str(resolve(request.path_info).url_name)+'.html',) 
+        if str(request.get_full_path()[1:]) == '':
+            return render (request, str(resolve(request.path_info).url_name)+'.html',) 
+        return render (request, str(request.get_full_path()[1:])+'.html',) 
 
 
 def home(request):
@@ -246,3 +249,38 @@ def non_resident_clients(request):
         elif request.POST.get("form_type") == 'formFour':
             return send_ask_message(request)
     return render (request, 'non-resident_clients.html', {'site_key': settings.RECAPTCHA_PUBLIC_KEY})
+def abort(request):
+    if request.method == "POST":
+        if request.POST.get("form_type") == 'formTwo':
+            return send_ask_message(request)
+        elif request.POST.get("form_type") == 'formOne':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formThree':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formFour':
+            return send_ask_message(request)
+    return render (request, 'articles/abort.html', {'site_key': settings.RECAPTCHA_PUBLIC_KEY})
+
+
+def hysteroscopy(request):
+    if request.method == "POST":
+        if request.POST.get("form_type") == 'formTwo':
+            return send_ask_message(request)
+        elif request.POST.get("form_type") == 'formOne':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formThree':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formFour':
+            return send_ask_message(request)
+    return render (request, 'services/hysteroscopy.html', {'site_key': settings.RECAPTCHA_PUBLIC_KEY})
+def laparoscopy(request):
+    if request.method == "POST":
+        if request.POST.get("form_type") == 'formTwo':
+            return send_ask_message(request)
+        elif request.POST.get("form_type") == 'formOne':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formThree':
+            return send_recall_message(request)
+        elif request.POST.get("form_type") == 'formFour':
+            return send_ask_message(request)
+    return render (request, 'services/laparoscopy.html', {'site_key': settings.RECAPTCHA_PUBLIC_KEY})

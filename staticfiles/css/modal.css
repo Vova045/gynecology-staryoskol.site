@@ -3,7 +3,7 @@
     display: none; justify-content: center; align-items: center; border-radius: 4px; z-index: 1000;
 }
 .recall_window {
-    width: 380px; height: 330px; position: relative; display: flex; flex-direction: row;  align-items: center; 
+    width: 380px; height: 240px; position: relative; display: flex; flex-direction: row;  align-items: center; 
     background-color: white;border-radius: 10px;
 }
 .recall_close {
@@ -58,7 +58,7 @@
     border-color: #F45F97;
     }
 .window_recall_button {
-    display: flex; flex-direction: row; margin-top: 5px; margin-bottom: 5px; justify-content: left;
+    display: flex; flex-direction: row; margin-top: 0px; margin-bottom: 5px; justify-content: left;
 }
 .recall_form .form-group {
     padding-bottom: 5px;
@@ -158,7 +158,59 @@
 .capcha_window {
     width: fit-content; height: fit-content; position: relative; display: flex; flex-direction: row;  align-items: center; 
     background-color: white;border-radius: 10px; border: 2px solid; border-color: #F45F97;
+}
 
+.recall_confidentional_check a:hover {
+    color: black; font-weight: 400;
+    }
+.ask_modal_confidentional_check a:hover {
+    color: black; font-weight: 400;
+    }
+@media (min-width: 250px) and (max-width: 319px) {
+    .recall_window {
+        width: 280px;
+    }
+    .data_sent_window {
+        width: 280px; 
+    }
+    .recall_form .form-group{
+        width: 270px;
+    }
+    .recall_text {
+        width: 280px; margin: auto 0;
+    }
+    .recall_confidentional_check {
+        width: 290px;padding-left: 12px;
+    }
+    .recall_confidentional_check .form-check-input {
+        margin-left: 0px; margin-right: 5px; 
+    }
+    .recall_form {
+        display: flex; flex-direction: column; padding: 0; width: 280px; align-items: center; margin: auto;
+    }
+}
+@media (min-width: 320px) and (max-width: 540px) {
+    .recall_window {
+        width: 280px;
+    }
+    .data_sent_window {
+        width: 280px; 
+    }
+    .recall_form .form-group{
+        width: 270px;
+    }
+    .recall_text {
+        width: 280px; margin: auto 0;
+    }
+    .recall_confidentional_check {
+        width: 290px;padding-left: 12px;
+    }
+    .recall_confidentional_check .form-check-input {
+        margin-left: 0px; margin-right: 5px; 
+    }
+    .recall_form {
+        display: flex; flex-direction: column; padding: 0; width: 280px; align-items: center; margin: auto;
+    }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
     .window_ask_modal .col-lg-6{
@@ -389,7 +441,7 @@
         padding-bottom: 5px;
     }
     .recall_window {
-        width: 200px;
+        width: 200px; height: 250px;
     }
     .recall_form {
         display: flex; flex-direction: column; padding: 0; width: 200px; align-items: center; margin: auto;
@@ -421,7 +473,7 @@
         height: 15px; width: 15px; text-align: left;
         }
     .window_recall_button {
-        display: flex; flex-direction: row; margin-top: 5px; margin-bottom: 5px; justify-content: left;margin-left: 10px;
+        display: flex; flex-direction: row; margin-top: 5px; margin-bottom: 5px; justify-content: left;margin-left: 0px;
     }
     .window_recall .navbar_button a{
         font-size: 15px;
