@@ -137,10 +137,10 @@ STATIC_URL = '/staticfiles/'
 base_static = Path(__file__).resolve().parent.parent.parent
 if DEBUG:
     STATICFILES_DIRS = [
-        os.path.join(base_static, 'staticfiles')
+        os.path.join(base_static, 'staticfile')
     ]
 else:
-    STATIC_ROOT = os.path.join(base_static, 'staticfiles')
+    STATIC_ROOT = os.path.join(base_static, 'staticfile')
 BASE_URL="http://127.0.0.1:8000"
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
