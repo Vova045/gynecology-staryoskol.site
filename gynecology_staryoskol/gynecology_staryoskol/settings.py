@@ -146,8 +146,8 @@ BASE_URL="http://127.0.0.1:8000"
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.mail.ru'
 EMAIL_PORT = 2525
-EMAIL_HOST_USER = 'vovatsar@bk.ru'
-EMAIL_HOST_PASSWORD = 't9e0gD28KZW8wC9XtgNm'
+EMAIL_HOST_USER = 'gynecology-staryoskol@mail.ru'
+EMAIL_HOST_PASSWORD = 'xtkvVubkfTSka6VeTEnv'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 

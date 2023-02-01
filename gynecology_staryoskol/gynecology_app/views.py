@@ -2,14 +2,19 @@ from django.shortcuts import render, redirect
 from django.core.mail import EmailMultiAlternatives
 from django.conf import settings
 from django.urls import resolve
+from django.core.mail import send_mail
 
 def send_recall_message(request):
     if request.method == 'POST':
         if request.POST.get("form_type") == 'formOne':
             telephone = request.POST.get('recall_phone')
+            message = request.POST.get('recall_message')
             recall_time_check=f"Нужно перезвонить в ближайшее время"
             need_msg = recall_time_check
-            rcl_msg=(f"<p>Поступила заявка на звонок от {telephone}.{need_msg}</p>")
+            if message == '':
+                rcl_msg=(f"Поступила заявка на звонок от {telephone}.{need_msg}")
+            else:
+                rcl_msg=(f'Поступила заявка на звонок от {telephone}.{need_msg}. Также оставили сообщение"{message}".')
             if str(request.get_full_path()[1:]) == '':
                 return render(request,str(resolve(request.path_info).url_name)+'.html', {'rcl_msg': rcl_msg, 'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
             return render(request,str(request.get_full_path()[1:])+'.html', {'rcl_msg': rcl_msg, 'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
@@ -17,12 +22,10 @@ def send_recall_message(request):
             subject='Заявка на звонок'
             form_email = settings.EMAIL_HOST_USER
             telephone = "телефон"
-            to='vovatsar@bk.ru'
             rcl_msg = request.POST.get('g-recaptcha_rcl_msg')
-            rcl_msg = EmailMultiAlternatives(subject,rcl_msg,form_email,[to])
-            rcl_msg.content_subtype='html'
             if request.recaptcha_is_valid:
-                rcl_msg.send()
+                send_mail(subject, rcl_msg, form_email,
+    ['vovatsar@bk.ru','gynotdelen@mail.ru'], fail_silently=False)
                 if str(request.get_full_path()[1:]) == '':
                     return render(request,str(resolve(request.path_info).url_name)+'.html', {'telephone': telephone,'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
                 return render(request,str(request.get_full_path()[1:])+'.html', {'telephone': telephone,'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
@@ -39,7 +42,7 @@ def send_ask_message(request):
             mail = request.POST.get('ask_modal_mail')
             phone = request.POST.get('ask_modal_phone')
             message = request.POST.get('ask_modal_message')
-            msg=(f"<p>Поступила новый вопрос на сайте от {lastname}{firstname}.Текст такой:{message}.<br> Электронная почта:{mail},Телефонный номер:{phone}</p>")
+            msg=(f"Поступила новый вопрос на сайте от {lastname}{firstname}.Текст такой:{message}.Электронная почта:{mail},Телефонный номер:{phone}")
             if str(request.get_full_path()[1:]) == '':
                 return render(request,str(resolve(request.path_info).url_name)+'.html', {'msg': msg, 'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
             return render(request,str(request.get_full_path()[1:])+'.html', {'msg': msg, 'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
@@ -48,11 +51,9 @@ def send_ask_message(request):
             subject='Новый вопрос'
             mail = "отправлено"
             form_email = settings.EMAIL_HOST_USER
-            to='vovatsar@bk.ru'
-            msg = EmailMultiAlternatives(subject,msg,form_email,[to])
-            msg.content_subtype='html'
             if request.recaptcha_is_valid:
-                msg.send()
+                send_mail(subject, msg, form_email,
+    ['vovatsar@bk.ru','gynecology-staryoskol@mail.ru'], fail_silently=False)
                 if str(request.get_full_path()[1:]) == '':
                     return render(request,str(resolve(request.path_info).url_name)+'.html', {'mail': mail, 'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
                 return render(request,str(request.get_full_path()[1:])+'.html', {'mail': mail, 'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
