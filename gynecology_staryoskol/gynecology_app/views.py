@@ -20,12 +20,10 @@ def send_recall_message(request):
             return render(request,str(request.get_full_path()[1:])+'.html', {'rcl_msg': rcl_msg, 'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
         if request.POST.get("form_type") == 'formThree':
             subject='Заявка на звонок'
-            form_email = settings.EMAIL_HOST_USER
             telephone = "телефон"
             rcl_msg = request.POST.get('g-recaptcha_rcl_msg')
             if request.recaptcha_is_valid:
-                send_mail(subject, rcl_msg, form_email,
-    ['vovatsar@bk.ru','gynotdelen@mail.ru'], fail_silently=False)
+                send_mail(subject, rcl_msg, 'Отделение Гинекологии <gynecology-staryoskol@mail.ru>', ['vovatsar@bk.ru' 'gynotdelen@mail.ru'], fail_silently=False)
                 if str(request.get_full_path()[1:]) == '':
                     return render(request,str(resolve(request.path_info).url_name)+'.html', {'telephone': telephone,'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
                 return render(request,str(request.get_full_path()[1:])+'.html', {'telephone': telephone,'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
@@ -42,18 +40,16 @@ def send_ask_message(request):
             mail = request.POST.get('ask_modal_mail')
             phone = request.POST.get('ask_modal_phone')
             message = request.POST.get('ask_modal_message')
-            msg=(f"Поступила новый вопрос на сайте от {lastname}{firstname}.Текст такой:{message}.Электронная почта:{mail},Телефонный номер:{phone}")
+            msg=(f"Поступил новый вопрос на сайте от {lastname}{firstname}.Текст такой:{message}.Электронная почта:{mail},Телефонный номер:{phone}")
             if str(request.get_full_path()[1:]) == '':
                 return render(request,str(resolve(request.path_info).url_name)+'.html', {'msg': msg, 'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
             return render(request,str(request.get_full_path()[1:])+'.html', {'msg': msg, 'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
         if request.POST.get("form_type") == 'formFour':
-            msg = request.POST.get('g-recaptcha_msg')
             subject='Новый вопрос'
             mail = "отправлено"
-            form_email = settings.EMAIL_HOST_USER
+            msg = request.POST.get('g-recaptcha_msg')
             if request.recaptcha_is_valid:
-                send_mail(subject, msg, form_email,
-    ['vovatsar@bk.ru','gynecology-staryoskol@mail.ru'], fail_silently=False)
+                send_mail(subject, msg, 'Отделение Гинекологии <gynecology-staryoskol@mail.ru>', ['vovatsar@bk.ru', 'gynotdelen@mail.ru'], fail_silently=False)
                 if str(request.get_full_path()[1:]) == '':
                     return render(request,str(resolve(request.path_info).url_name)+'.html', {'mail': mail, 'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
                 return render(request,str(request.get_full_path()[1:])+'.html', {'mail': mail, 'recaptcha_site_key':settings.RECAPTCHA_PUBLIC_KEY})
