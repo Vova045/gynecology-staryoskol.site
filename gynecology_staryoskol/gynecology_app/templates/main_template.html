@@ -215,22 +215,7 @@
     <script src="{% static '/js/custom.js' %}"></script>
     <script src="{% static '/js/modal.js' %}"></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
-    <script>
-        $(document).ready(function(){
-        $(".owl-carousel").owlCarousel({
-            items:2,
-            loop:true,
-            responsive:{
-                250:{items:2},
-                320:{items:2},
-                541:{items:2},
-                769:{items:2},
-                1025:{items:3},
-                1440:{items:5},
-                1920:{items:5},
-        }});
-        });
-    </script>
+
 
   {% block custom_js %}
   {% endblock custom_js %}

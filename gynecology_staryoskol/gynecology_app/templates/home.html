@@ -323,7 +323,7 @@
                         </div>
                         <div class="article-details">
                           <h1>Соколова Валентина Николаевна</h1>
-                          <p>Врач акушер-гинекоолог/p>
+                          <p>Врач акушер-гинекоолог</p>
                         </div>
                       </article>
                 </div>
@@ -612,5 +612,21 @@
 {% endblock %}    
 
 {% block custom_js %}
+<script>
+    $(document).ready(function(){
+    $(".owl-carousel").owlCarousel({
+        items:3,
+        loop:true,
+        responsive:{
+            250:{items:2},
+            320:{items:2},
+            541:{items:2},
+            769:{items:2},
+            1025:{items:3},
+            1441:{items:5},
+            1920:{items:5},
+    }});
+    });
+</script>
 <script src="{% static '/js/main.js' %}"></script>
 {% endblock custom_js %}
