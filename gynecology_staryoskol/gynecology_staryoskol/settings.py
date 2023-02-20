@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
-
+from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%za2a9)f_0pw9g)$s)r#&7i1&)w9r=ah-(3=xeq@d-1kh#2$!#'
+SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -76,15 +76,8 @@ WSGI_APPLICATION = 'gynecology_staryoskol.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'u1815677_gynecology_db',
-	    'USER': 'u1815677_gynecol',
-	    'PASSWORD':'MaFgyn22.',
-	    'HOST':'localhost',
-    }
-}
+
+DATABASES = config("DATABASES")
 
 
 # Password validation
@@ -147,14 +140,14 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.mail.ru'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = "gynecology-staryoskol@mail.ru"
-EMAIL_HOST_PASSWORD = 'SmPbfZNAagYxWfe1JuAL'
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 SERVER_EMAIL = EMAIL_HOST_USER
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 RECAPTCHA_PUBLIC_KEY = '6LfQ6NwjAAAAAGc9bnlaSxPvEHGx4OLMhsfO5EyV'
-RECAPTCHA_PRIVATE_KEY = '6LfQ6NwjAAAAAEmaEOnIVulZsjwAuKN3BuNP3tNz'
+RECAPTCHA_PRIVATE_KEY = config("RECAPTCHA_PRIVATE_KEY")
 RECAPTCHA_DEFAULT_ACTION = 'generic'
 RECAPTCHA_SCORE_THRESHOLD = 0.5
 RECAPTCHA_LANGUAGE = 'en'
